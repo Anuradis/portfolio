@@ -20,6 +20,9 @@ export class MainComponentComponent implements OnInit {
   windowTop = true;
   scrollOn = true;
   scrollPositionY = 0;
+  showMore: boolean = true;
+  showMoreName: string = 'Show More';
+  animationStateShowMore = 'out';
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
     if (Math.floor(window.scrollY) > 700) {
@@ -28,25 +31,16 @@ export class MainComponentComponent implements OnInit {
     } else if (Math.floor(window.scrollY) < 1000) {
       this.windowTop = false;
       this.scrollPositionY = Math.floor(window.scrollY);
-      // console.log(`< 1000 ${window.scrollY}`);
     }
-    // console.log(`< afterall ${window.scrollY}`);
 }
 
-onScroll(el: HTMLElement, $event) {
+onScroll(el: HTMLElement) {
   if (this.scrollPositionY > 700) {
     window.scrollTo(0, 0);
-    console.log(window.screenX, window.scrollY, window.screenTop);
-    console.log(el + 'el');
     } else if (this.scrollPositionY <= 700) {
       el.scrollIntoView();
      }
-
-
 }
-
-
-
   constructor() { }
 
   ngOnInit() {
@@ -68,6 +62,16 @@ onScroll(el: HTMLElement, $event) {
     this.toDoContentContent = !this.toDoContentContent;
     this.animationStateToDo = this.animationStateToDo === 'out' ? 'in' : 'out';
     $event.preventDefault();
+  }
+  onShowMore() {
+    this.showMore = !this.showMore;
+    if (this.showMore) {
+      this.showMoreName = 'Show More';
+    } else if (!this.showMore) {
+      this.showMoreName = 'Show Less';
+    }
+
+    this.animationStateShowMore = this.animationStateShowMore === 'out' ? 'in' : 'out';
   }
 
 }
