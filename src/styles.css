@@ -588,12 +588,46 @@ button {
               animation: heart-animation 1s ease-in-out infinite;
               -webkit-animation: heart-animation 1s ease-in-out infinite;
               background-color: transparent;
-              bottom: 80px;
               position: fixed;
-              right: 80px;
               text-shadow: 1px 3px 3px rgba(60, 101, 118, 1);
               color: gold;;
             }
+            @media only screen and (max-width: 600px) {
+              .portfolio__item-scroll-up {
+                bottom: 20vw;
+                right: 4.5vw;
+              } }
+
+              @media only screen and (min-width: 600px) {
+                .portfolio__item-scroll-up {
+                  bottom: 17vw;
+                  right: 4.5vw;
+                } }
+
+            @media only screen and (min-width: 768px) {
+              .portfolio__item-scroll-up {
+                bottom: 11vw;
+                right: 6.5vw;
+              } }
+            @media only screen and (min-width: 992px) {
+              .portfolio__item-scroll-up {
+                bottom: 9.5vw;
+                right: 6.5vw;
+              } }
+
+              @media only screen and (min-width: 1200px) {
+                .portfolio__item-scroll-up {
+                  bottom: 8.5vw;
+                  right: 5.5vw;
+                } }
+
+                @media only screen and (min-width: 1800px) {
+                  .portfolio__item-scroll-up {
+                    bottom: 5vw;
+                    right: 18.5vw;
+                  } }
+
+
             .portfolio__item-scroll-up:hover {
               color: rgb(42, 41, 41);
               animation: heart-animation 1s ease-in-out none;
@@ -713,9 +747,10 @@ button {
           margin-right: 0.75rem; } }
 
 .footer {
-  padding: 3rem 15px;
+  padding: 3rem 3rem;
   text-align: center;
   position: relative;
+  background-color: var(--light-body-color);
   z-index: 1; }
   @media screen and (min-width: 768px) {
     .footer {
