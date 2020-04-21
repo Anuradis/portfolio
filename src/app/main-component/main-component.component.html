@@ -1,1 +1,239 @@
-<p>main-component works!</p>
+  <main #top class="container-fluid">
+      <div class="row">
+          <div class="col-12">
+              <div class="content">
+                  <div class="content__left">
+                      <section class="resume">
+                          <div class="resume__intro">
+                              <h2 class="heading-secondary u-color-white u-margin-bottom-med">About me</h2>
+                              <p class="paragraph u-color-white">My focus is to develop as Front-End Developer. I believe that the qualities I have – diligence, analytical mind, fast learning capability and goal - orientation are the foundation of this; I have had the opportunity to be part of a microservice architecture project that consisted of about 30 people – mutual understanding, the awareness that everyone is fighting for a common goal as well as clear communication were the key to success. </p>
+                              <p class="paragraph u-color-white u-margin-bottom-smaller">I believe anything can be overcome through commitment and hardwork. Always up for learning
+                                  new things.</p>
+                          </div>
+                          <div class="resume__experience">
+                              <h2 class="heading-secondary u-margin-bottom-small">Technical skills</h2>
+                              <ul class="list">
+                                <li class="list__item paragraph">HTML5
+                                  Care about semantic code and good practice.</li>
+                                  <li class="list__item paragraph">CSS3
+                                    Care about good practice and clean code..</li>
+                                  <li class="list__item paragraph">Bootstrap
+                                    I know and I can use it at practice and quickly find the necessary things in the documentation.
+                                </li>
+                                <li class="list__item paragraph">RWD
+                                  I care about the good display of the page at all resolutions.
+                                  </li>
+                                  <li class="list__item paragraph">JavaScript
+                                    Before getting to know the frameworks I got familiar with pure javascript. It is necessary to me to know the basics..</li>
+                                  <li class="list__item paragraph">TypeScript
+                                    For creating good code in Angular, I started learning TypeScript and trying to make friends with it.
+                                  </li>
+                                  <li class="list__item paragraph">Angular
+                                    In previous work I worked with React and created various functionalities. Now I'm learning Angular.</li>
+                                    <li class="list__item paragraph">TestCafe
+
+                                    </li>
+                                      <li class="list__item paragraph">JAVA
+
+                                      </li>
+                                      <li class="list__item paragraph">Selemnium
+
+                                      </li>
+                                  <li class="list__item paragraph">GIT
+                                     Knowledge of git(version-control) is of course essential in any project.</li>
+                                  <li class="list__item paragraph">JIRA
+                                      a great tool for project management, so everyone know what his of is..</li>
+                              </ul>
+                          </div>
+                          <div class="resume__education">
+                              <h2 class="heading-secondary u-color-white">Experience</h2>
+                              <ul class="list">
+                                  <li class="list__item">
+                                      <p class="paragraph u-color-white">
+                                          <span class="u-weight-bld">Junior Software Engineer</span>
+                                          <br>Global Logic, Zielona Góra, Poland
+                                          <br>
+                                          <span class="paragraph--small">(09/2019 – present)</span>
+                                          <br>
+                                          <br>Participation in the microservice archt. Project – Fleet data management.
+                                      </p>
+                                  </li>
+                                  <br>
+                                  <li class="list__item">
+                                    <p class="paragraph u-color-white">
+                                        <span class="u-weight-bld">The winner of Summer Front – End Academy</span>
+                                        <br>Global Logic, Zielona Góra, Poland
+                                        <br>
+                                        <span class="paragraph--small">(07/2019 – 09/2019)</span>
+                                        <br>
+                                        <br>After completing the academy, I have received an offer of further cooperation.
+                                    </p>
+                                </li>
+                              </ul>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="content__right">
+                      <section class="portfolio">
+                          <header class="portfolio__header">
+                              <h3 class="heading-tertiary u-color-white">My projects</h3>
+                          </header>
+                          <div class="portfolio__content">
+                              <div class="portfolio__content-main">
+                                  <article class="portfolio__item">
+                                      <div class="portfolio__item-preview" style="background-image: url('../../assets/images/weather_app.png');" data-portfolio="weather_app">
+                                        <a href="https://pptodolist.herokuapp.com" target="_blank">
+                                          <span class="portfolio__item-bg-button"></span></a>
+                                          <ul class="portfolio__item-cta">
+                                              <li class="portfolio__item-cta__item">
+                                                  <a href="https://yourfreeweatherapp.web.app/" target="_blank" class="portfolio__item-cta__link">
+                                                      <i class="fa fa-github portfolio__item-cta__icon"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
+                                              (click)="toggleContentWeatherApp($event)"><a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                                                [class.fa-angle-up]="weatherAppContent"[class.fa-angle-down]="!weatherAppContent"></i></a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="portfolio__item-info"
+                                      [hidden]="!weatherAppContent"
+                                      [@slideInOut]="animationStateWeatherApp">
+                                          <div class="portfolio__item-info__intro">
+                                              <p class="paragraph u-color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel nisl at elit tristique convallis in pellentesque ligula. Nullam egestas mi vel malesuada pharetra. Proin at aliquet tellus. Phasellus ut dui et ante tincidunt volutpat nec non dolor. Ut vehicula nec sapien a blandit. Fusce hendrerit tristique diam, non sollicitudin purus tempus id. Nunc pharetra sem venenatis urna fermentum euismod. Nam mattis, augue in fermentum faucibus, nunc ipsum fringilla turpis, et rhoncus lacus nibh id magna. Suspendisse finibus congue nisl, non cursus nisi accumsan non. Donec condimentum gravida tortor vel rhoncus. Nam ornare quam ac pulvinar tincidunt. Nunc at arcu ut nisl mollis tempor vel in sem. Nunc ut neque non leo venenatis lobortis.
+
+                                                Mauris nulla nulla, commodo in congue non, sagittis eget nisi. Curabitur malesuada mi nec magna dictum mollis. Suspendisse sed ligula elit. Donec dui sapien, sagittis nec nisi id, egestas lacinia orci. Mauris auctor a est sit amet mattis. Nullam metus eros, ultricies ut facilisis eu, eleifend vitae quam. Sed eget sollicitudin diam. In velit sem, mollis a felis sit amet, pellentesque egestas dolor. Quisque non risus quis ligula placerat aliquet. Quisque feugiat erat nunc, vel efficitur est bibendum nec. Nunc pretium justo at ligula finibus, eu hendrerit purus porttitor.</p>
+                                          </div>
+                                      </div>
+                                  </article>
+
+                                  <article class="portfolio__item">
+                                      <div class="portfolio__item-preview" style="background-image: url('../../assets/images/fetch_news-server.png');" data-portfolio="playball_game">
+                                        <a href="https://pptodolist.herokuapp.com" target="_blank">
+                                          <span class="portfolio__item-bg-button"></span></a>
+                                          <ul class="portfolio__item-cta">
+                                              <li class="portfolio__item-cta__item">
+                                                  <a href="https://anuradis.github.io/playball-game/" target="_blank" class="portfolio__item-cta__link">
+                                                      <i class="fa fa-github portfolio__item-cta__icon"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
+                                              (click)="toggleContentFetchServer($event)">
+                                                <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                                                  [class.fa-angle-up]="fetchServerContent"[class.fa-angle-down]="!fetchServerContent"></i></a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="portfolio__item-info"
+                                      [hidden]="!fetchServerContent"
+                                      [@slideInOut]="animationStateFetchServer">
+                                          <div class="portfolio__item-info__intro">
+                                              <p class="paragraph u-color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel nisl at elit tristique convallis in pellentesque ligula. Nullam egestas mi vel malesuada pharetra. Proin at aliquet tellus. Phasellus ut dui et ante tincidunt volutpat nec non dolor. Ut vehicula nec sapien a blandit. Fusce hendrerit tristique diam, non sollicitudin purus tempus id. Nunc pharetra sem venenatis urna fermentum euismod. Nam mattis, augue in fermentum faucibus, nunc ipsum fringilla turpis, et rhoncus lacus nibh id magna. Suspendisse finibus congue nisl, non cursus nisi accumsan non. Donec condimentum gravida tortor vel rhoncus. Nam ornare quam ac pulvinar tincidunt. Nunc at arcu ut nisl mollis tempor vel in sem. Nunc ut neque non leo venenatis lobortis.
+
+                                                Mauris nulla nulla, commodo in congue non, sagittis eget nisi. Curabitur malesuada mi nec magna dictum mollis. Suspendisse sed ligula elit. Donec dui sapien, sagittis nec nisi id, egestas lacinia orci. Mauris auctor a est sit amet mattis. Nullam metus eros, ultricies ut facilisis eu, eleifend vitae quam. Sed eget sollicitudin diam. In velit sem, mollis a felis sit amet, pellentesque egestas dolor. Quisque non risus quis ligula placerat aliquet. Quisque feugiat erat nunc, vel efficitur est bibendum nec. Nunc pretium justo at ligula finibus, eu hendrerit purus porttitor.</p>
+                                          </div>
+                                      </div>
+                                  </article>
+
+                                  <article class="portfolio__item">
+                                      <div class="portfolio__item-preview" style="background-image: url('../../assets/images/todo_list.png');" data-portfolio="todo_list">
+                                        <a href="https://pptodolist.herokuapp.com" target="_blank">
+                                        <span class="portfolio__item-bg-button"></span></a>
+                                          <ul class="portfolio__item-cta">
+                                              <li class="portfolio__item-cta__item">
+                                                  <a href="https://github.com/Anuradis/toDoList-onHeroku" target="_blank" class="portfolio__item-cta__link">
+                                                      <i class="fa fa-github portfolio__item-cta__icon"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
+                                              (click)="toggleContentToDo($event)">
+                                                <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info">
+                                                  <i class ="fa fa-2x portfolio__item-cta__icon"
+                                                  [class.fa-angle-up]="toDoContentContent"[class.fa-angle-down]="!toDoContentContent"></i>
+                                                </a></li>
+                                          </ul>
+                                      </div>
+                                      <div class="portfolio__item-info"
+                                      [hidden]="!toDoContentContent"
+                                      [@slideInOut]="animationStateToDo">
+                                          <div class="portfolio__item-info__intro">
+                                              <p class="paragraph u-color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel nisl at elit tristique convallis in pellentesque ligula. Nullam egestas mi vel malesuada pharetra. Proin at aliquet tellus. Phasellus ut dui et ante tincidunt volutpat nec non dolor. Ut vehicula nec sapien a blandit. Fusce hendrerit tristique diam, non sollicitudin purus tempus id. Nunc pharetra sem venenatis urna fermentum euismod. Nam mattis, augue in fermentum faucibus, nunc ipsum fringilla turpis, et rhoncus lacus nibh id magna. Suspendisse finibus congue nisl, non cursus nisi accumsan non. Donec condimentum gravida tortor vel rhoncus. Nam ornare quam ac pulvinar tincidunt. Nunc at arcu ut nisl mollis tempor vel in sem. Nunc ut neque non leo venenatis lobortis.
+
+                                                Mauris nulla nulla, commodo in congue non, sagittis eget nisi. Curabitur malesuada mi nec magna dictum mollis. Suspendisse sed ligula elit. Donec dui sapien, sagittis nec nisi id, egestas lacinia orci. Mauris auctor a est sit amet mattis. Nullam metus eros, ultricies ut facilisis eu, eleifend vitae quam. Sed eget sollicitudin diam. In velit sem, mollis a felis sit amet, pellentesque egestas dolor. Quisque non risus quis ligula placerat aliquet. Quisque feugiat erat nunc, vel efficitur est bibendum nec. Nunc pretium justo at ligula finibus, eu hendrerit purus porttitor.</p>
+                                          </div>
+                                      </div>
+                                  </article>
+                              </div>
+                              <div class="portfolio__content-sub">
+                                  <article class="portfolio__item">
+                                      <div class="portfolio__item-preview" style="background-image: url('loremlorem');" data-portfolio="loremlorem">
+                                        <a href="https://pptodolist.herokuapp.com" target="_blank">
+                                          <span class="portfolio__item-bg-button"></span></a>
+                                          <ul class="portfolio__item-cta">
+                                              <li class="portfolio__item-cta__item">
+                                                  <a href="https://github.com/Anuradis/playball-game" target="_blank" class="portfolio__item-cta__link">
+                                                      <i class="fa fa-github portfolio__item-cta__icon"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"><a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                                                [class.fa-angle-up]="toDoContentContent"[class.fa-angle-down]="!toDoContentContent"></i></a></li>
+                                              <li class="portfolio__item-cta__item">
+                                                  <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--live">
+                                                      <span class="portfolio__item-cta__label">See live</span>
+                                                      <i class="fa fa-long-arrow-alt-right portfolio__item-cta__icon"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="portfolio__item-info">
+                                          <div class="portfolio__item-info__intro">
+                                              <p class="paragraph u-color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel nisl at elit tristique convallis in pellentesque ligula. Nullam egestas mi vel malesuada pharetra. Proin at aliquet tellus. Phasellus ut dui et ante tincidunt volutpat nec non dolor. Ut vehicula nec sapien a blandit. Fusce hendrerit tristique diam, non sollicitudin purus tempus id. Nunc pharetra sem venenatis urna fermentum euismod. Nam mattis, augue in fermentum faucibus, nunc ipsum fringilla turpis, et rhoncus lacus nibh id magna. Suspendisse finibus congue nisl, non cursus nisi accumsan non. Donec condimentum gravida tortor vel rhoncus. Nam ornare quam ac pulvinar tincidunt. Nunc at arcu ut nisl mollis tempor vel in sem. Nunc ut neque non leo venenatis lobortis.
+
+                                                Mauris nulla nulla, commodo in congue non, sagittis eget nisi. Curabitur malesuada mi nec magna dictum mollis. Suspendisse sed ligula elit. Donec dui sapien, sagittis nec nisi id, egestas lacinia orci. Mauris auctor a est sit amet mattis. Nullam metus eros, ultricies ut facilisis eu, eleifend vitae quam. Sed eget sollicitudin diam. In velit sem, mollis a felis sit amet, pellentesque egestas dolor. Quisque non risus quis ligula placerat aliquet. Quisque feugiat erat nunc, vel efficitur est bibendum nec. Nunc pretium justo at ligula finibus, eu hendrerit purus porttitor.</p>
+                                          </div>
+                                      </div>
+                                  </article>
+                                  <article class="portfolio__item">
+                                      <div class="portfolio__item-preview" style="background-image: url('loremlorem');" data-portfolio="lorem">
+                                        <a href="https://pptodolist.herokuapp.com" target="_blank">
+                                          <span class="portfolio__item-bg-button"></span></a>
+                                          <ul class="portfolio__item-cta">
+                                              <li class="portfolio__item-cta__item">
+                                                  <a href="https://github.com/Anuradis/playball-game" target="_blank" class="portfolio__item-cta__link">
+                                                      <i class="fa fa-github portfolio__item-cta__icon"></i>
+                                                  </a>
+                                              </li>
+                                              <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"><a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                                                [class.fa-angle-up]="toDoContentContent"[class.fa-angle-down]="!toDoContentContent"></i></a></li>
+                                              <li class="portfolio__item-cta__item">
+                                                  <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--live">
+                                                      <span class="portfolio__item-cta__label">See live</span>
+                                                      <i class="fa fa-long-arrow-alt-right portfolio__item-cta__icon"></i>
+                                                  </a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                      <div class="portfolio__item-info">
+                                          <div class="portfolio__item-info__intro">
+                                              <p class="paragraph u-color-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel nisl at elit tristique convallis in pellentesque ligula. Nullam egestas mi vel malesuada pharetra. Proin at aliquet tellus. Phasellus ut dui et ante tincidunt volutpat nec non dolor. Ut vehicula nec sapien a blandit. Fusce hendrerit tristique diam, non sollicitudin purus tempus id. Nunc pharetra sem venenatis urna fermentum euismod. Nam mattis, augue in fermentum faucibus, nunc ipsum fringilla turpis, et rhoncus lacus nibh id magna. Suspendisse finibus congue nisl, non cursus nisi accumsan non. Donec condimentum gravida tortor vel rhoncus. Nam ornare quam ac pulvinar tincidunt. Nunc at arcu ut nisl mollis tempor vel in sem. Nunc ut neque non leo venenatis lobortis.
+
+                                                Mauris nulla nulla, commodo in congue non, sagittis eget nisi. Curabitur malesuada mi nec magna dictum mollis. Suspendisse sed ligula elit. Donec dui sapien, sagittis nec nisi id, egestas lacinia orci. Mauris auctor a est sit amet mattis. Nullam metus eros, ultricies ut facilisis eu, eleifend vitae quam. Sed eget sollicitudin diam. In velit sem, mollis a felis sit amet, pellentesque egestas dolor. Quisque non risus quis ligula placerat aliquet. Quisque feugiat erat nunc, vel efficitur est bibendum nec. Nunc pretium justo at ligula finibus, eu hendrerit purus porttitor.</p>
+                                          </div>
+                                      </div>
+                                  </article>
+                              </div>
+                          </div>
+                          <footer class="portfolio__footer">
+                              <button #seeMore class="cta cta--white paragraph paragraph--med u-color-white u-align-block-center portfolio__show-more">Show more</button>
+                          </footer>
+                      </section>
+                  </div>
+              </div>
+          </div>
+          <button class="portfolio__item-scroll-up"
+          (click)="onScroll(seeMore, $event)">
+            <i class="fa fa-3x" [class.fa-angle-double-down]="!windowTop" [class.fa-angle-double-up]="windowTop"></i>
+          </button>
+      </div>
+  </main>
+
