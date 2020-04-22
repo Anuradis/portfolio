@@ -104,7 +104,7 @@ export class MainComponentComponent implements OnInit {
   onShowMore($event, el: Element) {
       if (this.animationStateShowMore) {
         this.showMoreName = 'Show More';
-       } else if (!this.animationStateShowMore) {
+       } else {
       this.showMoreName = 'Show Less';
       $event.preventDefault();
     }
