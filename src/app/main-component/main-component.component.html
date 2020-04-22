@@ -1,5 +1,6 @@
-  <main #top class="container-fluid">
-      <div class="row">
+  <main #top class="container-fluid"
+  ng-style="{'display': loadComponent}">
+      <div [@lightSpeedIn]="lightSpeedIn" class="row">
           <div class="col-12">
               <div class="content">
                   <div class="content__left">
@@ -7,7 +8,7 @@
                           <div class="resume__intro">
                               <h2 class="heading-secondary u-color-white u-margin-bottom-med">About me</h2>
                               <p class="paragraph u-color-white">My focus is to develop as Front-End Developer. I believe that the qualities I have – diligence, analytical mind, fast learning capability and goal - orientation are the foundation of this; I have had the opportunity to be part of a microservice architecture project that consisted of about 30 people – mutual understanding, the awareness that everyone is fighting for a common goal as well as clear communication were the key to success. </p>
-                              <p class="paragraph u-color-white u-margin-bottom-smaller">Tu wstaw madry cytat!!!!!!</p>
+                              <p class="paragraph u-color-white u-margin-bottom-smaller">I agree with Thomas Jefferson who said - “I find that the harder I work , the more luck I seem to have.”</p>
                           </div>
                           <div class="resume__experience">
                               <h2 class="heading-secondary u-margin-bottom-small">Technical skills</h2>
@@ -287,15 +288,15 @@
                           </div>
                           <footer class="portfolio__footer">
                               <button #seeMore class="cta cta--white paragraph paragraph--med u-color-white u-align-block-center portfolio__show-more"
-                              (click)="onShowMore(seeMore, $event)">{{showMoreName}}</button>
+                              (click)="onShowMore( $event)">{{showMoreName}}</button>
                           </footer>
                       </section>
                   </div>
               </div>
           </div>
-          <button class="portfolio__item-scroll-up"
+          <button [@rubberBand]="rubberBand" class="portfolio__item-scroll-up"
           (click)="onScroll(seeMore)">
-            <i class="fa fa-3x" [class.fa-angle-double-down]="!windowTop" [class.fa-angle-double-up]="windowTop"></i>
+            <i  class="fa fa-3x" [class.fa-angle-double-down]="!windowTop" [class.fa-angle-double-up]="windowTop"></i>
           </button>
       </div>
   </main>

@@ -1,20 +1,30 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { SlideInOutAnimation } from '../../assets/animations/animations';
+import { trigger, transition, useAnimation } from '@angular/animations';
+import { fadeIn, bounceInDown } from 'ng-animate';
 
 @Component({
   selector: 'app-main-component',
   templateUrl: './main-component.component.html',
   styleUrls: ['./main-component.component.css'],
-  animations: [SlideInOutAnimation]
+  animations: [trigger('lightSpeedIn', [transition('* => *', useAnimation(fadeIn, {params: { Opacity: 0,
+    timing: 1.2,
+  }}
+    ))], ), trigger('rubberBand', [transition('* => *', useAnimation(bounceInDown, {params: { Opacity: 0, timing: 3}}
+      ))], )
+    , SlideInOutAnimation
+],
 })
 
 
 export class MainComponentComponent implements OnInit {
 
+  rubberBand: any;
+  lightSpeedIn: any;
+
   windowTop = false;
   scrollOn = true;
   scrollPositionY = 0;
-  showMore = true;
 
   weatherAppContent = false;
   ampContent = false;
@@ -31,7 +41,8 @@ export class MainComponentComponent implements OnInit {
   animationStatePlayball = 'out';
   animationStateWebDesign = 'out';
 
-  showMoreName = 'Show More';
+  showMore = true;
+  showMoreName = 'See More';
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
     if (Math.floor(window.scrollY) > 700) {
@@ -101,13 +112,13 @@ export class MainComponentComponent implements OnInit {
 
 
 
-  onShowMore($event, el: Element) {
-      if (this.animationStateShowMore) {
-        this.showMoreName = 'Show More';
+  onShowMore($event) {
+    this.animationStateShowMore = this.animationStateShowMore === 'out' ? 'in' : 'out';
+    if (this.animationStateShowMore === 'out') {
+        this.showMoreName = 'See More';
        } else {
-      this.showMoreName = 'Show Less';
+      this.showMoreName = 'See Less';
       $event.preventDefault();
     }
-      this.animationStateShowMore = this.animationStateShowMore === 'out' ? 'in' : 'out';
 }
 }

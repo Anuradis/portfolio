@@ -34,4 +34,10 @@ export const SlideInOutAnimation = [
       ]
       )])
   ]),
-]
+  trigger('slide', [
+    state('left', style({ transform: 'translateX(0)' })),
+    state('right', style({ transform: 'translateX(-100%)' })),
+    transition('initial => *', animate(2000))
+])
+];
+

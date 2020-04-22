@@ -1,7 +1,7 @@
 
   <section class="container">
     <div class="col-12 user__wrapper">
-      <div class="col-12 col-sm-8 col-md-6 user__content">
+      <div [@fadeInLeft]="fadeInLeft" class="col-12 col-sm-8 col-md-6 user__content">
         <div class="user__copy">
           <div class="user__logo">
             <img src="../../assets/images/pp_logo.png" alt="Logo" class="user__logo-img">
@@ -27,11 +27,10 @@
                       </a>
                   </li>
               </ul>
-              <a href="" target="_blank" class="cta cta--white cta--white-outline paragraph paragraph--med u-weight-reg user__cta">-----</a>
           </div>
         </div>
       </div>
-      <div class="d-none d-sm-block col-12 col-sm-4 col-md-6 user__profile">
+      <div [@fadeInRight]="fadeInRight" class="d-none d-sm-block col-12 col-sm-4 col-md-6 user__profile">
         <img src="../../assets/images/profile_image.png" alt="Profile image" class="user__profile-img">
       </div>
       </div>
