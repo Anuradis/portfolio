@@ -14,11 +14,13 @@
 html,
 body {
   scroll-behavior: smooth;
+  height: auto;
   overflow-x: hidden !important;
   max-width: 100vw;
   font-size: 12px;
   background-color: var(--light-body-color);
   }
+
   @media screen and (min-width: 768px) {
     html,
     body {
@@ -469,6 +471,7 @@ button {
         right: 3.5rem; } }
   .portfolio__content-sub {
     display: block;
+    overflow-y: hidden;
      }
 
 
@@ -670,16 +673,18 @@ button {
       -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.125);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.125); }
   .portfolio__item-info {
-    background-color: var(var(--dark-black-color));
+    background-color: var(--dark-black-color);
     display: block;
      }
     .portfolio__item-info__intro, .portfolio__item-info__content {
-      padding: 1rem; }
+      padding: 1rem; 
+      background-color: var(--dark-black-color)  
+    }
       @media screen and (min-width: 768px) {
         .portfolio__item-info__intro, .portfolio__item-info__content {
           padding: 2rem; } }
     .portfolio__item-info__intro {
-      background-color: var(--dark-blue-color); }
+      background-color: var(--dark-black-color); }
   @media screen and (min-width: 992px) {
     .portfolio__item:first-child .portfolio__item-preview {
       border-top-right-radius: 5px; } }
@@ -939,7 +944,7 @@ button {
       @media screen and (min-width: 1200px) {
         .user__profile-img {
           width: auto;
-          /* max-height: 500px;  */
+          max-height: 500px;
         }
       }
 

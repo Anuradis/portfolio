@@ -87,7 +87,7 @@
                           </header>
                           <div class="portfolio__content">
                               <div class="portfolio__content-main">
-                                  <article class="portfolio__item">
+                                  <article #weatherAppTarget class="portfolio__item">
                                       <div class="portfolio__item-preview" style="background-image: url('../../assets/images/weather_app.png');" data-portfolio="weather_app">
                                         <a href="https://yourfreeweatherapp.web.app/" target="_blank">
                                           <span class="portfolio__item-bg-button"></span></a>
@@ -98,7 +98,7 @@
                                                   </a>
                                               </li>
                                               <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                                              (click)="toggleContentWeatherApp($event, 'toggle')"><a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                                              (click)="onToggleContentWeatherApp($event, weatherAppTarget)"><a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
                                                 [class.fa-angle-up]="weatherAppContent"[class.fa-angle-down]="!weatherAppContent"></i></a>
                                               </li>
                                           </ul>
@@ -117,9 +117,9 @@
                                   </article>
 
                                   <article class="portfolio__item">
-                                      <div class="portfolio__item-preview" style="background-image: url('../../assets/images/apm.png');" data-portfolio="playball_game">
+                                      <div class="portfolio__item-preview" style="background-image: url('../../assets/images/apm.png');" data-portfolio="AMP">
                                         <a href="https://github.com/DeborahK/Angular-Routing" target="_blank">
-                                          <span class="portfolio__item-bg-button"></span></a>
+                                          <span #ampTarget class="portfolio__item-bg-button"></span></a>
                                           <ul class="portfolio__item-cta">
                                               <li class="portfolio__item-cta__item">
                                                   <a href="https://github.com/DeborahK/Angular-Routing" target="_blank" class="portfolio__item-cta__link">
@@ -127,15 +127,15 @@
                                                   </a>
                                               </li>
                                               <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                                              (click)="toggleContentFetchServer($event)">
+                                              (click)="onToggleContentAmp($event, ampTarget)">
                                                 <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
-                                                  [class.fa-angle-up]="fetchServerContent"[class.fa-angle-down]="!fetchServerContent"></i></a>
+                                                  [class.fa-angle-up]="ampContent"[class.fa-angle-down]="!ampContent"></i></a>
                                               </li>
                                           </ul>
                                       </div>
                                       <div class="portfolio__item-info"
-                                      ng-style="{'visibility': animationStateFetchServer ? 'visible' : 'hidden'}"
-                                      [@slideInOut]="animationStateFetchServer">
+                                      ng-style="{'visibility': animationStateAmp ? 'visible' : 'hidden'}"
+                                      [@slideInOut]="animationStateAmp">
                                           <div class="portfolio__item-info__intro">
                                               <p class="paragraph u-color-white">CRUD App
                                                 <br>
@@ -157,7 +157,7 @@
                                   <article class="portfolio__item">
                                       <div class="portfolio__item-preview" style="background-image: url('../../assets/images/todo_list.png');" data-portfolio="todo_list">
                                         <a href="https://pptodolist.herokuapp.com" target="_blank">
-                                        <span class="portfolio__item-bg-button"></span></a>
+                                        <span #toDoTarget class="portfolio__item-bg-button"></span></a>
                                           <ul class="portfolio__item-cta">
                                               <li class="portfolio__item-cta__item">
                                                   <a href="https://github.com/Anuradis/toDoList-onHeroku" target="_blank" class="portfolio__item-cta__link">
@@ -165,7 +165,7 @@
                                                   </a>
                                               </li>
                                               <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                                              (click)="toggleContentToDo($event)">
+                                              (click)="onToggleContentToDo($event, toDoTarget)">
                                                 <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info">
                                                   <i class ="fa fa-2x portfolio__item-cta__icon"
                                                   [class.fa-angle-up]="toDoContentContent"[class.fa-angle-down]="!toDoContentContent"></i>
@@ -185,14 +185,14 @@
                                       </div>
                                   </article>
                               </div>
-                              <div class="portfolio__content-sub toggle"
+                              <div class="portfolio__content-sub"
                               ng-style="{'visibility': animationStateShowMore ? 'visible' : 'hidden'}"
                               [@slideInOut]="animationStateShowMore"
                               >
                               <article class="portfolio__item">
-                                <div class="portfolio__item-preview" style="background-image: url('../../assets/images/fetch_news-server.png');" data-portfolio="playball_game">
+                                <div class="portfolio__item-preview" style="background-image: url('../../assets/images/fetch_news-server.png');" data-portfolio="Fetch-news-server">
                                   <a href="https://github.com/Anuradis/fetchnewsserver/blob/master/README.md" target="_blank">
-                                    <span class="portfolio__item-bg-button"></span></a>
+                                    <span #fetchNewsTarget class="portfolio__item-bg-button"></span></a>
                                     <ul class="portfolio__item-cta">
                                         <li class="portfolio__item-cta__item">
                                             <a href="https://github.com/Anuradis/fetchnewsserver" target="_blank" class="portfolio__item-cta__link">
@@ -200,14 +200,14 @@
                                             </a>
                                         </li>
                                         <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                                        (click)="toggleContentFetchServer($event)">
+                                        (click)="onToggleContentFetchServer($event, fetchNewsTarget)">
                                           <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
                                             [class.fa-angle-up]="fetchServerContent"[class.fa-angle-down]="!fetchServerContent"></i></a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="portfolio__item-info"
-                                [hidden]="!fetchServerContent"
+                                ng-style="{'visibility': animationStateFetchServer ? 'visible' : 'hidden'}"
                                 [@slideInOut]="animationStateFetchServer">
                                     <div class="portfolio__item-info__intro">
                                         <p class="paragraph u-color-white">Creator of NewsFetchApp – News are fetched from the server and are being displayed chronologically in web app.
@@ -220,9 +220,9 @@
                             </article>
 
                             <article class="portfolio__item">
-                              <div class="portfolio__item-preview" style="background-image: url('../../assets/images/playball_game.png');" data-portfolio="playball_game">
+                              <div class="portfolio__item-preview" style="background-image: url('../../assets/images/playball_game.png');" data-portfolio="Playball_game">
                                 <a href="https://anuradis.github.io/playball-game/" target="_blank">
-                                  <span class="portfolio__item-bg-button"></span></a>
+                                  <span #playballTarget class="portfolio__item-bg-button"></span></a>
                                   <ul class="portfolio__item-cta">
                                       <li class="portfolio__item-cta__item">
                                           <a href="https://github.com/Anuradis/playball-game" target="_blank" class="portfolio__item-cta__link">
@@ -230,15 +230,15 @@
                                           </a>
                                       </li>
                                       <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                                      (click)="toggleContentFetchServer($event)">
+                                      (click)="onToggleContentPlayball($event, playballTarget)">
                                         <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
-                                          [class.fa-angle-up]="fetchServerContent"[class.fa-angle-down]="!fetchServerContent"></i></a>
+                                          [class.fa-angle-up]="playballContent"[class.fa-angle-down]="!playballContent"></i></a>
                                       </li>
                                   </ul>
                               </div>
                               <div class="portfolio__item-info"
-                              [hidden]="!fetchServerContent"
-                              [@slideInOut]="animationStateFetchServer">
+                              ng-style="{'visibility': animationStatePlayball ? 'visible' : 'hidden'}"
+                              [@slideInOut]="animationStatePlayball">
                                   <div class="portfolio__item-info__intro">
                                       <p class="paragraph u-color-white">Playball-game was created by "MafiaJs" team. The main purpose was to enchance JavaScript skills and get first experience in team project.
                                         It's the falling ball game; in order to win the user has to score (kill) as many balls as he can, before they fall down.
@@ -254,10 +254,10 @@
                               </div>
                           </article>
 
-                          <article class="portfolio__item">
-                            <div class="portfolio__item-preview" style="background-image: url('../../assets/images/web-design.png');" data-portfolio="web-design">
+                          <article  class="portfolio__item">
+                            <div class="portfolio__item-preview" style="background-image: url('../../assets/images/web-design.png');" data-portfolio="Example-web-design">
                               <a href="https://anuradis.github.io/Example-web-design/" target="_blank">
-                                <span class="portfolio__item-bg-button"></span></a>
+                                <span  class="portfolio__item-bg-button"></span></a>
                                 <ul class="portfolio__item-cta">
                                     <li class="portfolio__item-cta__item">
                                         <a href="https://github.com/Anuradis/Example-web-design" target="_blank" class="portfolio__item-cta__link">
@@ -265,15 +265,15 @@
                                         </a>
                                     </li>
                                     <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                                    (click)="toggleContentFetchServer($event)">
+                                    (click)="onToggleContentWebDesign($event, webDesignTarget)">
                                       <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
-                                        [class.fa-angle-up]="fetchServerContent"[class.fa-angle-down]="!fetchServerContent"></i></a>
+                                        [class.fa-angle-up]="webDesignContent"[class.fa-angle-down]="!webDesignContent"></i></a>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="portfolio__item-info"
-                            [hidden]="!fetchServerContent"
-                            [@slideInOut]="animationStateFetchServer">
+                            <div #webDesignTarget class="portfolio__item-info"
+                            ng-style="{'visibility': animationStateWebDesign ? 'visible' : 'hidden'}"
+                            [@slideInOut]="animationStateWebDesign">
                                 <div class="portfolio__item-info__intro">
                                     <p class="paragraph u-color-white">Web design page – small app created as an excerise to practice basic rules of languages
                                       <br>
@@ -283,36 +283,6 @@
                                 </div>
                             </div>
                         </article>
-
-                        <article class="portfolio__item">
-                          <div class="portfolio__item-preview" style="background-image: url('../../assets/images/web-design.png');" data-portfolio="web-design">
-                            <a href="https://anuradis.github.io/web-design/" target="_blank">
-                              <span class="portfolio__item-bg-button"></span></a>
-                              <ul class="portfolio__item-cta">
-                                  <li class="portfolio__item-cta__item">
-                                      <a href="https://github.com/Anuradis/web-design" target="_blank" class="portfolio__item-cta__link">
-                                          <i class="fa fa-github portfolio__item-cta__icon"></i>
-                                      </a>
-                                  </li>
-                                  <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                                  (click)="toggleContentFetchServer($event)">
-                                    <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
-                                      [class.fa-angle-up]="fetchServerContent"[class.fa-angle-down]="!fetchServerContent"></i></a>
-                                  </li>
-                              </ul>
-                          </div>
-                          <div class="portfolio__item-info"
-                          [hidden]="!fetchServerContent"
-                          [@slideInOut]="animationStateFetchServer">
-                              <div class="portfolio__item-info__intro">
-                                  <p class="paragraph u-color-white">Web design page – small app created as an excerise to practice basic rules of languages
-                                    <br>
-                                    <br>
-                                    Techstack: HTML5, CSS3.
-                                  </p>
-                              </div>
-                          </div>
-                      </article>
                               </div>
                           </div>
                           <footer class="portfolio__footer">
