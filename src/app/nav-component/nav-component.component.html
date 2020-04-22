@@ -1,14 +1,14 @@
-<section class="nav">
-  <div class="container">
-    <div class="col-xs-12 user__wrapper">
-      <div class="col-xs-12 col-sm-8 col-md-6 user__content">
+
+  <section class="container">
+    <div class="col-12 user__wrapper">
+      <div [@fadeInLeft]="fadeInLeft" class="col-12 col-sm-8 col-md-6 user__content">
         <div class="user__copy">
           <div class="user__logo">
             <img src="../../assets/images/pp_logo.png" alt="Logo" class="user__logo-img">
           </div>
           <div class="divider"></div>
           <h1 class="heading-primary u-margin-bottom-smaller">Hello,</h1>
-          <p class="paragraph paragraph--med u-color-white">My name is Piotr Pachocki. I'm a Frontend Web Developer, it just like to create great stuff.</p>
+          <p class="paragraph paragraph--med u-color-white">My name is Piotr Pachocki. I'm a Frontend Web Developer, I just like to create great stuff.</p>
             <div class="user__links">
               <ul class="user__social">
                   <li class="user__social-item">
@@ -27,19 +27,11 @@
                       </a>
                   </li>
               </ul>
-              <a href="" target="_blank" class="cta cta--white cta--white-outline paragraph paragraph--med u-weight-reg user__cta">-----</a>
           </div>
         </div>
       </div>
-      <div class="hidden-xs col-xs-12 col-sm-4 col-md-6 user__profile">
-        <img src="../../assets/images/profile_image.jpg" alt="Profile image" class="user__profile-img">
-        <div class="user__profile-message">
-            <div class="user__profile-message__bubble">
-                <p class="paragraph u-color-primary">Hi!</p>
-            </div>
-        </div>
+      <div [@fadeInRight]="fadeInRight" class="d-none d-sm-block col-12 col-sm-4 col-md-6 user__profile">
+        <img src="../../assets/images/profile_image.png" alt="Profile image" class="user__profile-img">
       </div>
       </div>
-    </div>
-  <div class="row"></div>
-</section>
+    </section>
