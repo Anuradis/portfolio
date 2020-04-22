@@ -19,8 +19,8 @@ import { fadeIn, bounceInDown } from 'ng-animate';
 
 export class MainComponentComponent implements OnInit {
 
-  rubberBand: any;
-  lightSpeedIn: any;
+  rubberBand: Animation;
+  lightSpeedIn: Animation;
 
   windowTop = false;
   scrollOn = true;
@@ -44,7 +44,7 @@ export class MainComponentComponent implements OnInit {
   showMore = true;
   showMoreName = 'See More';
 
-  @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
+  @HostListener('window:scroll', ['$event']) onScrollEvent(): void {
     if (Math.floor(window.scrollY) > 700) {
       this.windowTop = true;
       this.scrollPositionY = Math.floor(window.scrollY);
@@ -60,7 +60,7 @@ export class MainComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-  onScroll(el: Element) {
+  onScroll(el: Element): void {
     if (this.scrollPositionY > 700) {
       window.scrollTo(0, 0);
       } else if (this.scrollPositionY <= 700) {
@@ -75,35 +75,35 @@ export class MainComponentComponent implements OnInit {
       target.scrollIntoView();
   }
 
-  onToggleContentAmp($event, el: Element) {
+  onToggleContentAmp($event, el: Element): void {
     this.animationStateAmp = this.animationStateAmp === 'out' ? 'in' : 'out';
     this.ampContent = !this.ampContent;
     $event.preventDefault();
     el.scrollIntoView();
   }
 
-  onToggleContentToDo($event, el: Element) {
+  onToggleContentToDo($event, el: Element): void {
     this.animationStateToDo = this.animationStateToDo === 'out' ? 'in' : 'out';
     this.toDoContentContent = !this.toDoContentContent;
     $event.preventDefault();
     el.scrollIntoView();
   }
 
-  onToggleContentFetchServer($event, el: Element) {
+  onToggleContentFetchServer($event, el: Element): void {
     this.animationStateFetchServer = this.animationStateFetchServer === 'out' ? 'in' : 'out';
     this.fetchServerContent = !this.fetchServerContent;
     $event.preventDefault();
     el.scrollIntoView();
   }
 
-  onToggleContentPlayball($event, el: Element) {
+  onToggleContentPlayball($event, el: Element): void {
     this.animationStatePlayball = this.animationStatePlayball === 'out' ? 'in' : 'out';
     this.playballContent = !this.playballContent;
     $event.preventDefault();
     el.scrollIntoView();
   }
 
-  onToggleContentWebDesign($event, el: Element) {
+  onToggleContentWebDesign($event, el: Element): void {
     this.animationStateWebDesign = this.animationStateWebDesign === 'out' ? 'in' : 'out';
     this.webDesignContent = !this.webDesignContent;
     $event.preventDefault();
@@ -112,7 +112,7 @@ export class MainComponentComponent implements OnInit {
 
 
 
-  onShowMore($event) {
+  onShowMore($event): void {
     this.animationStateShowMore = this.animationStateShowMore === 'out' ? 'in' : 'out';
     if (this.animationStateShowMore === 'out') {
         this.showMoreName = 'See More';

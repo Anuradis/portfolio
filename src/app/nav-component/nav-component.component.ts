@@ -14,8 +14,8 @@ import { bounceInLeft, bounceInRight} from 'ng-animate';
 })
 export class NavComponentComponent implements OnInit {
 
-  fadeInLeft: any;
-  fadeInRight: any;
+  fadeInLeft: Animation;
+  fadeInRight: Animation;
   constructor() { }
 
   ngOnInit() {
