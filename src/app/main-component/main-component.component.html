@@ -98,13 +98,13 @@
                                                   </a>
                                               </li>
                                               <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                                              (click)="toggleContentWeatherApp($event)"><a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                                              (click)="toggleContentWeatherApp($event, 'toggle')"><a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
                                                 [class.fa-angle-up]="weatherAppContent"[class.fa-angle-down]="!weatherAppContent"></i></a>
                                               </li>
                                           </ul>
                                       </div>
                                       <div class="portfolio__item-info"
-                                      [hidden]="!weatherAppContent"
+                                      ng-style="{'visibility': animationStateWeatherApp ? 'visible' : 'hidden'}"
                                       [@slideInOut]="animationStateWeatherApp">
                                           <div class="portfolio__item-info__intro">
                                               <p class="paragraph u-color-white">
@@ -134,7 +134,7 @@
                                           </ul>
                                       </div>
                                       <div class="portfolio__item-info"
-                                      [hidden]="!fetchServerContent"
+                                      ng-style="{'visibility': animationStateFetchServer ? 'visible' : 'hidden'}"
                                       [@slideInOut]="animationStateFetchServer">
                                           <div class="portfolio__item-info__intro">
                                               <p class="paragraph u-color-white">CRUD App
@@ -173,7 +173,7 @@
                                           </ul>
                                       </div>
                                       <div class="portfolio__item-info"
-                                      [hidden]="!toDoContentContent"
+                                      ng-style="{'visibility': animationStateToDo ? 'visible' : 'hidden'}"
                                       [@slideInOut]="animationStateToDo">
                                           <div class="portfolio__item-info__intro">
                                               <p class="paragraph u-color-white">Each user can create his own todo list, by providing list name after slash e.g. "baseURL/your_list". Thanks to MongoDB list is saved and stored in data base.
@@ -185,8 +185,8 @@
                                       </div>
                                   </article>
                               </div>
-                              <div class="portfolio__content-sub"
-                              [hidden]="showMore"
+                              <div class="portfolio__content-sub toggle"
+                              ng-style="{'visibility': animationStateShowMore ? 'visible' : 'hidden'}"
                               [@slideInOut]="animationStateShowMore"
                               >
                               <article class="portfolio__item">
@@ -317,7 +317,7 @@
                           </div>
                           <footer class="portfolio__footer">
                               <button #seeMore class="cta cta--white paragraph paragraph--med u-color-white u-align-block-center portfolio__show-more"
-                              (click)="onShowMore()">{{showMoreName}}</button>
+                              (click)="onShowMore(seeMore, $event)">{{showMoreName}}</button>
                           </footer>
                       </section>
                   </div>

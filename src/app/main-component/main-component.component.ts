@@ -1,5 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { SlideInOutAnimation } from '../../assets/animations/animations';
+import { clearLine } from 'readline';
 
 @Component({
   selector: 'app-main-component',
@@ -20,8 +21,8 @@ export class MainComponentComponent implements OnInit {
   windowTop = true;
   scrollOn = true;
   scrollPositionY = 0;
-  showMore: boolean = true;
-  showMoreName: string = 'Show More';
+  showMore = true;
+  showMoreName = 'Show More';
   animationStateShowMore = 'out';
 
   @HostListener('window:scroll', ['$event']) onScrollEvent($event) {
@@ -47,31 +48,31 @@ onScroll(el: HTMLElement) {
   }
 
   toggleContentWeatherApp($event): void {
-    this.weatherAppContent = !this.weatherAppContent;
-    this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
-    $event.preventDefault();
+      this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
+      this.weatherAppContent = !this.weatherAppContent;
+      $event.preventDefault();
   }
 
   toggleContentFetchServer($event) {
-    this.fetchServerContent = !this.fetchServerContent;
+
     this.animationStateFetchServer = this.animationStateFetchServer === 'out' ? 'in' : 'out';
+    this.fetchServerContent = !this.fetchServerContent;
     $event.preventDefault();
   }
 
   toggleContentToDo($event) {
-    this.toDoContentContent = !this.toDoContentContent;
     this.animationStateToDo = this.animationStateToDo === 'out' ? 'in' : 'out';
+    this.toDoContentContent = !this.toDoContentContent;
     $event.preventDefault();
   }
-  onShowMore() {
-    this.showMore = !this.showMore;
-    if (this.showMore) {
-      this.showMoreName = 'Show More';
-    } else if (!this.showMore) {
+  onShowMore(el: HTMLElement, $event) {
+      if (this.animationStateShowMore) {
+        this.showMoreName = 'Show More';
+        el.scrollIntoView();
+       } else if (!this.animationStateShowMore) {
       this.showMoreName = 'Show Less';
+      $event.preventDefault();
     }
-
-    this.animationStateShowMore = this.animationStateShowMore === 'out' ? 'in' : 'out';
-  }
-
+      this.animationStateShowMore = this.animationStateShowMore === 'out' ? 'in' : 'out';
+}
 }

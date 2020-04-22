@@ -6,6 +6,7 @@
   --green-darker-color: #1BB699;
   --dark-blue-color: #3C6576;
   --light-body-color: #f7f7f7;
+  --dark-black-color: #333;
 
   /* #dbdbdb */
 }
@@ -669,7 +670,8 @@ button {
       -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.125);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.125); }
   .portfolio__item-info {
-    background-color: #fff;
+    background-color: var(var(--dark-black-color));
+    display: block;
      }
     .portfolio__item-info__intro, .portfolio__item-info__content {
       padding: 1rem; }
@@ -937,7 +939,9 @@ button {
       @media screen and (min-width: 1200px) {
         .user__profile-img {
           width: auto;
-          max-height: 500px; } }
+          /* max-height: 500px;  */
+        }
+      }
 
 .content {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.09), 0 6px 6px rgba(0, 0, 0, 0.123);
