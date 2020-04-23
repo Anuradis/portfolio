@@ -232,7 +232,7 @@ button {
   }
 
 
-@-webkit-keyframes heart-animation {
+@-webkit-keyframes button-animation {
   0% {
     -webkit-transform: scale(1);
     transform: scale(1); }
@@ -243,7 +243,7 @@ button {
     -webkit-transform: scale(1);
     transform: scale(1); } }
 
-@keyframes heart-animation {
+@keyframes button-animation {
   0% {
     -webkit-transform: scale(1);
     transform: scale(1); }
@@ -608,8 +608,8 @@ button {
             -ms-transform: translateX(3rem);
             transform: translateX(3rem); }
             .portfolio__item-scroll-up {
-              animation: heart-animation 1s ease-in-out infinite;
-              -webkit-animation: heart-animation 1s ease-in-out infinite;
+              animation: button-animation 1s ease-in-out infinite;
+              -webkit-animation: button-animation 1s ease-in-out infinite;
               background-color: transparent;
               position: fixed;
               text-shadow: 1px 3px 3px rgba(60, 101, 118, 1);
@@ -671,7 +671,7 @@ button {
 
             .portfolio__item-scroll-up:hover {
               color: rgb(42, 41, 41);
-              animation: heart-animation 1s ease-in-out none;
+              animation: button-animation 1s ease-in-out none;
 
             }
   .portfolio__item-preview {
@@ -839,10 +839,6 @@ button {
         @media screen and (min-width: 768px) {
           .footer {
             padding: 2.25rem 15px; } }
-        .footer__heart {
-          color: red;
-          -webkit-animation: heart-animation 1s ease-in-out infinite;
-          animation: heart-animation 1s ease-in-out infinite; }
 
     .user__content {
       height: 100%;
