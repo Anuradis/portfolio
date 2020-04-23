@@ -53,8 +53,6 @@ export class MainComponentComponent implements OnInit {
       this.scrollPositionY = Math.floor(window.scrollY);
     }
 }
-
-
   constructor() { }
 
   ngOnInit() {
