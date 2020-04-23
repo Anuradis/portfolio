@@ -602,7 +602,13 @@ button {
               position: fixed;
               text-shadow: 1px 3px 3px rgba(60, 101, 118, 1);
               color: gold;;
+              z-index: 4;
             }
+            @media only screen and (min-width: 400px) {
+              .portfolio__item-scroll-up {
+                bottom: 25vw;
+                right: 4.5vw;
+              } }
             @media only screen and (max-width: 600px) {
               .portfolio__item-scroll-up {
                 bottom: 20vw;
@@ -695,9 +701,9 @@ button {
 
   @media screen and (min-width: 480px) {
         .portfolio__item-preview {
-          background-size: 150% auto; }
+          background-size: 160% auto; }
           .portfolio__item-preview:hover {
-            background-size: 160% auto; }  }
+            background-size: 170% auto; }  }
 
       .portfolio__item-bg-button {
         position:absolute;
