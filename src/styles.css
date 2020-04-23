@@ -213,12 +213,24 @@ button {
   height: 100%;
   }
 
+.container-fluid {
+    z-index: 4;
+  }
 
 [class^="col"] {
   padding: 0 15px; }
 
-.container {
-  max-width: 70%; }
+  .container {
+    max-width: 1245px;
+  }
+
+ @media screen and (max-width: 1600px) {
+    .container {
+
+      width: 70%;
+    }
+  }
+
 
 @-webkit-keyframes heart-animation {
   0% {
@@ -602,7 +614,8 @@ button {
               position: fixed;
               text-shadow: 1px 3px 3px rgba(60, 101, 118, 1);
               color: gold;;
-              z-index: 4;
+              z-index: 5;
+
             }
             @media only screen and (min-width: 400px) {
               .portfolio__item-scroll-up {
@@ -643,6 +656,17 @@ button {
                     bottom: 5vw;
                     right: 18.5vw;
                   } }
+
+                  @media only screen and (min-width: 2560px) {
+                    .portfolio__item-scroll-up {
+                      bottom: 4vw;
+                      right: 26.5vw;
+                    } }
+
+                  @media only screen and (min-width: 2600px) {
+                    .portfolio__item-scroll-up {
+                      display: none;
+                    } }
 
 
             .portfolio__item-scroll-up:hover {
