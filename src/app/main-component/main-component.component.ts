@@ -44,7 +44,7 @@ export class MainComponentComponent implements OnInit {
   showMore = true;
   showMoreName = 'See More';
 
-  @HostListener('window:scroll', ['$event']) onScrollEvent(): void {
+  @HostListener('window:scroll', []) onScrollEvent(): void {
     if (Math.floor(window.scrollY) > 700) {
       this.windowTop = true;
       this.scrollPositionY = Math.floor(window.scrollY);
@@ -53,8 +53,6 @@ export class MainComponentComponent implements OnInit {
       this.scrollPositionY = Math.floor(window.scrollY);
     }
 }
-
-
   constructor() { }
 
   ngOnInit() {
