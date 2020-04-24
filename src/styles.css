@@ -689,9 +689,6 @@ button {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     background-color: var(--green-color); }
-    @media screen and (min-width: 768px) {
-      .portfolio__item-preview {
-        background-size: 140% auto; } }
     @media screen and (min-width: 1200px) {
       .portfolio__item-preview {
         height: 30rem;
@@ -722,11 +719,21 @@ button {
     .portfolio__item:first-child .portfolio__item-preview {
       border-top-right-radius: 5px; } }
 
+      @media screen and (min-width: 768px) {
+        .portfolio__item-preview {
+          background-size: 140% auto; } }
+
   @media screen and (min-width: 480px) {
         .portfolio__item-preview {
           background-size: 160% auto; }
           .portfolio__item-preview:hover {
             background-size: 170% auto; }  }
+
+            @media screen and (max-width: 480px) {
+              .portfolio__item-preview {
+                background-size: 230% auto; }
+                .portfolio__item-preview:hover {
+                  background-size: 240% auto; }  }
 
       .portfolio__item-bg-button {
         position:absolute;
