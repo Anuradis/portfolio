@@ -4,7 +4,9 @@
       <div [@fadeInLeft]="fadeInLeft" class="col-12 col-sm-8 col-md-6 user__content">
         <div class="user__copy">
           <div class="user__logo">
-            <img src="../../assets/images/pp_logo.png" alt="Logo" class="user__logo-img">
+            <!-- <img src="../../assets/images/pp_logo.png" alt="Logo" class="user__logo-img"> -->
+            <img [defaultImage]="logoImgDraft" [lazyLoad]="logoImg"
+              alt="Logo" class="user__logo-img">
           </div>
           <div class="divider"></div>
           <h1 class="heading-primary u-margin-bottom-smaller">Hello,</h1>
@@ -31,7 +33,7 @@
         </div>
       </div>
       <div [@fadeInRight]="fadeInRight" class="d-none d-sm-block col-12 col-sm-4 col-md-6 user__profile">
-        <img src="../../assets/images/profile_image.png" alt="Profile image" class="user__profile-img">
+        <img [defaultImage]= "profileImgDraft" [lazyLoad] = "profileImg" alt="Profile image" class="user__profile-img">
       </div>
       </div>
     </section>

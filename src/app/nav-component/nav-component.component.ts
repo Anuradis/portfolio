@@ -16,6 +16,11 @@ export class NavComponentComponent implements OnInit {
 
   fadeInLeft: Animation;
   fadeInRight: Animation;
+  logoImg: string = '../../assets/images/pp_logo.png';
+  logoImgDraft: string = '../../assets/images/pp_logo-min.png';
+  profileImg: string = '../../assets/images/profile_image.png';
+  profileImgDraft: string = '../../assets/images/profile_image-min.png';
+
   constructor() { }
 
   ngOnInit() {

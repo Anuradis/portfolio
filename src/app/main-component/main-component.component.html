@@ -88,7 +88,7 @@
                           <div class="portfolio__content">
                               <div class="portfolio__content-main">
                                   <article #weatherAppTarget class="portfolio__item">
-                                      <div class="portfolio__item-preview" style="background-image: url('../../assets/images/weather_app.png');" data-portfolio="weather_app">
+                                      <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + weaterAppImgDraft +')'}" [lazyLoad] = "weaterAppImg" data-portfolio="weather_app">
                                         <a href="https://yourfreeweatherapp.web.app/" target="_blank">
                                           <span class="portfolio__item-bg-button"></span></a>
                                           <ul class="portfolio__item-cta">
@@ -117,7 +117,8 @@
                                   </article>
 
                                   <article class="portfolio__item">
-                                      <div class="portfolio__item-preview" style="background-image: url('../../assets/images/apm.png');" data-portfolio="AMP">
+                                     <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + apmImgDraft +')'}" [lazyLoad] = "apmImg"
+                                      data-portfolio="AMP">
                                         <a href="https://github.com/DeborahK/Angular-Routing" target="_blank">
                                           <span #ampTarget class="portfolio__item-bg-button"></span></a>
                                           <ul class="portfolio__item-cta">
@@ -155,7 +156,8 @@
                                   </article>
 
                                   <article class="portfolio__item">
-                                      <div class="portfolio__item-preview" style="background-image: url('../../assets/images/todo_list.png');" data-portfolio="todo_list">
+                                      <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + todoListImgDraft +')'}" [lazyLoad] = "todoListImg"
+                                        data-portfolio="todo_list">
                                         <a href="https://pptodolist.herokuapp.com" target="_blank">
                                         <span #toDoTarget class="portfolio__item-bg-button"></span></a>
                                           <ul class="portfolio__item-cta">
@@ -190,7 +192,8 @@
                               [@slideInOut]="animationStateShowMore"
                               >
                               <article class="portfolio__item">
-                                <div class="portfolio__item-preview" style="background-image: url('../../assets/images/fetch_news-server.png');" data-portfolio="Fetch-news-server">
+                                <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + fetchNewsImgDraft +')'}" [lazyLoad] = "fetchNewsImg"
+                                 data-portfolio="Fetch-news-server">
                                   <a href="https://github.com/Anuradis/fetchnewsserver/blob/master/README.md" target="_blank">
                                     <span #fetchNewsTarget class="portfolio__item-bg-button"></span></a>
                                     <ul class="portfolio__item-cta">
@@ -220,7 +223,8 @@
                             </article>
 
                             <article class="portfolio__item">
-                              <div class="portfolio__item-preview" style="background-image: url('../../assets/images/playball_game.png');" data-portfolio="Playball_game">
+                              <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + playballImgDraft +')'}" [lazyLoad] = "playballImg"
+                              data-portfolio="Playball_game">
                                 <a href="https://anuradis.github.io/playball-game/" target="_blank">
                                   <span #playballTarget class="portfolio__item-bg-button"></span></a>
                                   <ul class="portfolio__item-cta">
@@ -255,7 +259,8 @@
                           </article>
 
                           <article  class="portfolio__item">
-                            <div class="portfolio__item-preview" style="background-image: url('../../assets/images/web-design.png');" data-portfolio="Example-web-design">
+                            <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + webDesignImgDraft +')'}" [lazyLoad] = "webDesignImg"
+                            data-portfolio="Example-web-design">
                               <a href="https://anuradis.github.io/Example-web-design/" target="_blank">
                                 <span  class="portfolio__item-bg-button"></span></a>
                                 <ul class="portfolio__item-cta">
