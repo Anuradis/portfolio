@@ -24,6 +24,7 @@
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
     "ng-animate": "^0.3.4",
+    "ng-lazyload-image": "^7.1.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "web-animations-js": "^2.3.2",

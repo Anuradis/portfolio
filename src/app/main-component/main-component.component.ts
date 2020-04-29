@@ -22,6 +22,20 @@ export class MainComponentComponent implements OnInit {
   rubberBand: Animation;
   lightSpeedIn: Animation;
 
+  weaterAppImg: string = '../../assets/images/weather_app.png';
+  weaterAppImgDraft: string = '../../assets/images/weather_app-min.png';
+  apmImg: string = '../../assets/images/apm.png';
+  apmImgDraft: string = '../../assets/images/apm-min.png';
+  todoListImg: string = '../../assets/images/todo_list.png';
+  todoListImgDraft: string = '../../assets/images/todo_list-min.png';
+  fetchNewsImg: string = '../../assets/images/fetch_news-server.png';
+  fetchNewsImgDraft: string = '../../assets/images/fetch_news-server-min.png';
+  playballImg: string = '../../assets/images/playball_game.png';
+  playballImgDraft: string = '../../assets/images/playball_game-min.png';
+  webDesignImg: string = '../../assets/images/web-design.png';
+  webDesignImgDraft: string = '../../assets/images/web-design-min.png';
+
+
   windowTop = false;
   scrollOn = true;
   scrollPositionY = 0;

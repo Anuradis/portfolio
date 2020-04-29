@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-
+import { LazyLoadImageModule, intersectionObserverPreset } from 'ng-lazyload-image';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -17,7 +17,9 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, LazyLoadImageModule.forRoot({
+      preset: intersectionObserverPreset
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
