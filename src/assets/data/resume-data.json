@@ -1,0 +1,45 @@
+[
+  {
+    "title": "About me",
+    "paragraph" : "I have had the opportunity to be part of a microservice architecture project that consisted of about 30 people – mutual understanding, the awareness that everyone is fighting for a common goal as well as clear communication were the key to success.",
+    "secondParagraph": "I agree with Thomas Jefferson who said - \" I find that the harder I work , the more luck I seem to have.\""
+  },
+  {
+    "title": "Technical skills",
+    "skills": [
+    "JavaScript - essential knowledge to go any further with programming",
+    "Angular - proficient (based on Pluralsight)",
+    "TypeScript - funtamental for work with Angular",
+    "TestCafe - first test automation framework I got to work with. In my current employement I was responsible for creation of automated tests, API test automation",
+    "JAVA - I got to learn Java to create automation tests in Selenium Webdriver framework. It helped me a lot to become a better developer",
+    "Selenium WebDriver - creation of more complex automation tests",
+    "React - the basics",
+    "HTML5 - attention to semantic code and good practice",
+    "CSS3 - attention to good design and clean code",
+    "Bootstrap - pracitce use and quick reseach",
+    "Responsive Web Design",
+    "GIT",
+    "JIRA"
+  ]
+  },
+  {
+  "title": "Experience",
+  "experience":[
+      {
+      "jobTitle": "Junior Software Engineer",
+      "location": "Global Logic, Zielona Góra, Poland",
+      "dateRange": "(09/2019 – present)"
+      },
+      {
+      "jobTitle": "The winner of Summer Front – End Academy",
+      "location": "Global Logic, Zielona Góra, Poland",
+      "dateRange": "(07/2019 – 09/2019)"
+      },
+      {
+      "jobTitle": "Self-taught programmer",
+      "location": "Zielona Góra, Poland",
+      "dateRange": "(01/2019 – Present)"
+      }
+    ]
+  }
+]

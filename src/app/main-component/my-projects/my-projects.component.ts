@@ -47,6 +47,9 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   showMore = true;
   showMoreName = 'See More';
 
+  animationState = [];
+  conentet = [];
+
   mainProjects: any;
   subProjects: any;
 
@@ -68,7 +71,14 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
     this.sendSeeMoreElement.emit(this.someFiled);
   }
 
-  onToggleContentWeatherApp($event, target: Element): void {
+  // onToggleContentRefactored($event, target: Element, animationState: string, content: boolean) {
+  //   this.animationState = this.animationState === 'out' ? 'in' : 'out';
+  //   this.content = !this.content;
+  //   $event.preventDefault();
+  //   target.scrollIntoView();
+  // }
+
+  onToggleContentWeatherApp($event, target: Element, ): void {
     this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
     this.weatherAppContent = !this.weatherAppContent;
     $event.preventDefault();

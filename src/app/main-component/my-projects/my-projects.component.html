@@ -3,14 +3,15 @@
       <h3 class="heading-tertiary u-color-white">My projects</h3>
   </header>
   <div class="portfolio__content">
-      <div class="portfolio__content-main">
+      <div class="portfolio__content-main"
+      *ngFor="let main of mainProjects">
           <article #weatherAppTarget class="portfolio__item">
-              <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + weaterAppImgDraft +')'}" [lazyLoad] = "weaterAppImg" data-portfolio="weather_app">
-                <a href="https://yourfreeweatherapp.web.app/" target="_blank">
+              <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + main.img +')'}" [lazyLoad] = "main.ImgDraft" [title]="main.name">
+                <a [href]="main.sourceURL" target="_blank">
                   <span class="portfolio__item-bg-button"></span></a>
                   <ul class="portfolio__item-cta">
                       <li class="portfolio__item-cta__item">
-                          <a href="https://bitbucket.org/jsmafia/weatherapp-angular/src/master/" target="_blank" class="portfolio__item-cta__link">
+                          <a [href]="main.sourceRepo" target="_blank" class="portfolio__item-cta__link">
                               <i class="fa fa-github portfolio__item-cta__icon"></i>
                           </a>
                       </li>
@@ -23,16 +24,20 @@
               <div class="portfolio__item-info"
               ng-style="{'visibility': animationStateWeatherApp ? 'visible' : 'hidden'}"
               [@slideInOut]="animationStateWeatherApp">
-                  <div class="portfolio__item-info__intro">
-                      <p class="paragraph u-color-white">
-                        Co-creator of WeatherApp -  project realized at Summer Front-End Academy at GL.
-                        <br>
-                        <br>
-                         Techstack: HTML5, Css3, JavaScript ES6, Angular, Leaflet. </p>
+                  <div class="portfolio__item-info__intro"
+                  *ngFor="let pmain of main.description">
+                      <p class="paragraph u-color-white" *ngIf="pmain.title">{{pmain.title}}</p>
+                      <p class="paragraph u-color-white">{{pmain.main}}</p>
+                        <ul class="paragraph u-color-white" *ngIf="pmain.courses">
+                          <li *ngFor="let course of pmain.courses">
+                            {{course}}
+                          </li>
+                        </ul>{{pmain.title}}
+                      <p class="paragraph u-color-white">{{pmain.techstack}}</p>
                   </div>
               </div>
           </article>
-
+<!--
           <article class="portfolio__item">
              <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + apmImgDraft +')'}" [lazyLoad] = "apmImg"
               data-portfolio="AMP">
@@ -102,20 +107,21 @@
                       </p>
                   </div>
               </div>
-          </article>
+          </article> -->
       </div>
-      <div class="portfolio__content-sub"
+      <div class="portfolio__content-sub "
+      *ngFor="let sub of subProjects"
       ng-style="{'visibility': animationStateShowMore ? 'visible' : 'hidden'}"
       [@slideInOut]="animationStateShowMore"
       >
       <article class="portfolio__item">
-        <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + fetchNewsImgDraft +')'}" [lazyLoad] = "fetchNewsImg"
-         data-portfolio="Fetch-news-server">
-          <a href="https://github.com/Anuradis/fetchnewsserver/blob/master/README.md" target="_blank">
+        <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + sub.img +')'}" [lazyLoad] = "sub.imgDraft"
+         [title]="sub.name">
+          <a [href]="sub.sourceURL" target="_blank">
             <span #fetchNewsTarget class="portfolio__item-bg-button"></span></a>
             <ul class="portfolio__item-cta">
                 <li class="portfolio__item-cta__item">
-                    <a href="https://github.com/Anuradis/fetchnewsserver" target="_blank" class="portfolio__item-cta__link">
+                    <a [href]="sub.sourceRepo" target="_blank" class="portfolio__item-cta__link">
                         <i class="fa fa-github portfolio__item-cta__icon"></i>
                     </a>
                 </li>
@@ -129,17 +135,15 @@
         <div class="portfolio__item-info"
         ng-style="{'visibility': animationStateFetchServer ? 'visible' : 'hidden'}"
         [@slideInOut]="animationStateFetchServer">
-            <div class="portfolio__item-info__intro">
-                <p class="paragraph u-color-white">Creator of NewsFetchApp – News are fetched from the server and are being displayed chronologically in web app.
-                  <br>
-                  <br>
-                  Techstack: JavaScript ES6, HTML5, CSS3, Node.js, Npm, Webpack.
-                </p>
+            <div class="portfolio__item-info__intro" *ngFor="let p of sub.description">
+                <p class="paragraph u-color-white">{{p.main}}</p>
+                  <p class="paragraph u-color-white" *ngIf="p.sub">{{p.sub}}</p>
+                    <p class="paragraph u-color-white" >{{p.techstack}}</p>
             </div>
         </div>
     </article>
 
-    <article class="portfolio__item">
+    <!-- <article class="portfolio__item">
       <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + playballImgDraft +')'}" [lazyLoad] = "playballImg"
       data-portfolio="Playball_game">
         <a href="https://anuradis.github.io/playball-game/" target="_blank">
@@ -204,7 +208,8 @@
             </p>
         </div>
     </div>
-</article>
+  </article> -->
+
       </div>
   </div>
   <footer class="portfolio__footer">
@@ -212,3 +217,4 @@
       (click)="onShowMore($event)">{{showMoreName}}</button>
   </footer>
 </section>
+
