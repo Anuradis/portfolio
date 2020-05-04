@@ -1,4 +1,4 @@
 export interface ISkillsData {
-  tittle: string;
+  title: string;
   skills: Array<string>;
 }

@@ -9,14 +9,13 @@ import { tap } from 'rxjs/internal/operators/tap';
 })
 export class ProjectsDataService {
 
-  private resumeDataUrl = '/assets/data/resume-data.json';
+  private resumeDataUrl = '/assets/data/projects-data.json';
 
   constructor(private http: HttpClient) { }
 
-    getResumeData(): Observable<any> {
+    getMyProjectsData(): Observable<any> {
   return this.http.get<any>(this.resumeDataUrl)
   .pipe(
-    tap(data => console.log ('All ' + JSON.stringify(data))),
     catchError(this.handleError)
     );
   }

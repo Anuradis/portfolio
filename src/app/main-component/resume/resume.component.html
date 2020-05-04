@@ -1,76 +1,28 @@
 <section class="resume__intro">
 <h2 class="heading-secondary u-color-white u-margin-bottom-med">{{aboutArr?.title}}</h2>
-  <p class="paragraph u-color-white">{{aboutArr.paragraph}} </p>
-  <p class="paragraph u-color-white u-margin-bottom-smaller">{{aboutArr.secondParagraph}}</p>
+  <p class="paragraph u-color-white">{{aboutArr?.paragraph}} </p>
+  <p class="paragraph u-color-white u-margin-bottom-smaller">{{aboutArr?.secondParagraph}}</p>
 </section>
 
 <section class="resume__experience">
-  <h2 class="heading-secondary u-margin-bottom-small">Technical skills</h2>
-  <ul class="list">
-    <li class="list__item paragraph">JavaScript
-      - essential knowledge to go any further with programming</li>
-    <li class="list__item paragraph">Angular
-      - proficient (based on Pluralsight)</li>
-      <li class="list__item paragraph">TypeScript
-        - funtamental for work with Angular
-      </li>
-      <li class="list__item paragraph">TestCafe - first test automation framework I got to work with.
-        In my current employement I was responsible for creation of automated tests, API test automation
-      </li>
-      <li class="list__item paragraph">JAVA - I got to learn Java to create automation tests in Selenium Webdriver framework. It helped me a lot to become a better developer
-      </li>
-      <li class="list__item paragraph">Selenium WebDriver - creation of more complex automation tests
-      </li>
-      <li class="list__item paragraph">React
-        - the basics
-       </li>
-    <li class="list__item paragraph">HTML5
-      - attention to semantic code and good practice</li>
-      <li class="list__item paragraph">CSS3
-       - attention to good design and clean code</li>
-      <li class="list__item paragraph">Bootstrap
-        - pracitce use and quick reseach
-    </li>
-    <li class="list__item paragraph">Responsive Web Design
-      </li>
-      <li class="list__item paragraph">GIT
-         </li>
-      <li class="list__item paragraph">JIRA
-       </li>
+  <h2 class="heading-secondary u-margin-bottom-small">{{skillsArr?.title}}</h2>
+  <ul class="list" *ngFor="let skill of skillsArr?.skills">
+    <li class="list__item paragraph">{{skill}}</li>
   </ul>
 </section>
 
   <section class="resume__education">
-  <h2 class="heading-secondary u-color-white">Experience</h2>
-  <ul class="list">
+  <h2 class="heading-secondary u-color-white">{{experienceArr?.title}}</h2>
+  <ul class="list" *ngFor="let exp of experienceArr?.experience">
       <li class="list__item">
           <p class="paragraph u-color-white">
-              <span class="u-weight-bld">Junior Software Engineer</span>
-              <br>Global Logic, Zielona Góra, Poland
+              <span class="u-weight-bld">{{exp.jobTitle}}</span>
+              <br>{{exp.location}}
               <br>
-              <span class="paragraph--small">(09/2019 – present)</span>
+              <span class="paragraph--small">{{exp.dateRange}}</span>
               <br>
           </p>
       </li>
       <br>
-      <li class="list__item">
-        <p class="paragraph u-color-white">
-            <span class="u-weight-bld">The winner of Summer Front – End Academy</span>
-            <br>Global Logic, Zielona Góra, Poland
-            <br>
-            <span class="paragraph--small">(07/2019 – 09/2019)</span>
-            <br>
-        </p>
-    </li>
-    <br>
-    <li class="list__item">
-      <p class="paragraph u-color-white">
-          <span class="u-weight-bld">Self-taught programmer</span>
-          <br>Zielona Góra, Poland
-          <br>
-          <span class="paragraph--small">(01/2019 – Present)</span>
-          <br>
-      </p>
-  </li>
   </ul>
 </section>

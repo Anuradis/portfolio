@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ElementRef, Output, EventEmitter } from '@angular/core';
 import { SlideInOutAnimation } from 'src/assets/animations/animations';
+import { ProjectsDataService } from 'src/app/services/projects-data.service';
 
 @Component({
   selector: 'app-my-projects',
@@ -14,18 +15,18 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   @ViewChild('seeMore', {static: false}) someFiled: ElementRef;
   @Output() sendSeeMoreElement = new EventEmitter<ElementRef>();
 
-  weaterAppImg: string = '../../assets/images/weather_app.png';
-  weaterAppImgDraft: string = '../../assets/images/weather_app-min.png';
-  apmImg: string = '../../assets/images/apm.png';
-  apmImgDraft: string = '../../assets/images/apm-min.png';
-  todoListImg: string = '../../assets/images/todo_list.png';
-  todoListImgDraft: string = '../../assets/images/todo_list-min.png';
-  fetchNewsImg: string = '../../assets/images/fetch_news-server.png';
-  fetchNewsImgDraft: string = '../../assets/images/fetch_news-server-min.png';
-  playballImg: string = '../../assets/images/playball_game.png';
-  playballImgDraft: string = '../../assets/images/playball_game-min.png';
-  webDesignImg: string = '../../assets/images/web-design.png';
-  webDesignImgDraft: string = '../../assets/images/web-design-min.png';
+  // weaterAppImg: string = '../../assets/images/weather_app.png';
+  // weaterAppImgDraft: string = '../../assets/images/weather_app-min.png';
+  // apmImg: string = '../../assets/images/apm.png';
+  // apmImgDraft: string = '../../assets/images/apm-min.png';
+  // todoListImg: string = '../../assets/images/todo_list.png';
+  // todoListImgDraft: string = '../../assets/images/todo_list-min.png';
+  // fetchNewsImg: string = '../../assets/images/fetch_news-server.png';
+  // fetchNewsImgDraft: string = '../../assets/images/fetch_news-server-min.png';
+  // playballImg: string = '../../assets/images/playball_game.png';
+  // playballImgDraft: string = '../../assets/images/playball_game-min.png';
+  // webDesignImg: string = '../../assets/images/web-design.png';
+  // webDesignImgDraft: string = '../../assets/images/web-design-min.png';
 
 
   weatherAppContent = false;
@@ -46,7 +47,20 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   showMore = true;
   showMoreName = 'See More';
 
-  constructor() { }
+  mainProjects: any;
+  subProjects: any;
+
+  constructor(private projectsDataService: ProjectsDataService) {
+    this.projectsDataService.getMyProjectsData()
+    .subscribe({
+      next: data => {
+        this.mainProjects = data[0].mainProjects;
+        this.subProjects = data[0].subProjects;
+        console.log(this.mainProjects);
+        console.log(this.subProjects);
+      }
+    });
+  }
 
   ngOnInit() {}
 
