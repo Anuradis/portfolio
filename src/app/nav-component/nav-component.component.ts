@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { transition } from '@angular/animations';
 import { trigger, useAnimation } from '@angular/animations';
 import { bounceInLeft, bounceInRight} from 'ng-animate';
+import { NavDataService } from '../services/nav-data.service';
+import { INavData } from '../interfaces/nav-interface';
 
 @Component({
   selector: 'app-nav-component',
@@ -20,10 +22,22 @@ export class NavComponentComponent implements OnInit {
   logoImgDraft: string = '../../assets/images/pp_logo-min.png';
   profileImg: string = '../../assets/images/profile_image.png';
   profileImgDraft: string = '../../assets/images/profile_image-min.png';
+  errorMessage: string;
 
-  constructor() { }
+  constructor(private navDataService: NavDataService) {
 
-  ngOnInit() {
   }
 
-}
+  navData: INavData[] = [];
+
+  ngOnInit(): void {
+    this.navDataService.getNavData().subscribe({
+      next: data => {
+        this.navData = data;
+      },
+      error: err => {
+        this.errorMessage = err;
+      }
+    });
+    }
+  }

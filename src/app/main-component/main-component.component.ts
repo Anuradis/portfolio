@@ -40,7 +40,7 @@ export class MainComponentComponent implements OnInit {
 
   ngOnInit() {}
 
-  onScroll(el: ElementRef): void {
+  onScrollBtn(el: ElementRef): void {
     if (this.scrollPositionY > 700) {
       window.scrollTo(0, 0);
       } else if (this.scrollPositionY <= 700) {
