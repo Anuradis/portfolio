@@ -16,18 +16,19 @@
                           </a>
                       </li>
                       <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                      (click)="onToggleContentWeatherApp($event, weatherAppTarget)"><a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
-                        [class.fa-angle-up]="weatherAppContent"[class.fa-angle-down]="!weatherAppContent"></i></a>
+                      (click)="onToggleContent($event, weatherAppContent, main?.id)"><a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                        [class.fa-angle-up]="onArrowSwitch(main.id)"[class.fa-angle-down]="!onArrowSwitch(main.id)"></i></a>
                       </li>
                   </ul>
               </div>
               <div class="portfolio__item-info"
-              ng-style="{'visibility': animationStateWeatherApp ? 'visible' : 'hidden'}"
-              [@slideInOut]="animationStateWeatherApp">
+              ng-style="{'visibility': onAnimationState(main.id) ? 'visible' : 'hidden'}"
+              [@slideInOut]="onAnimationState(main.id)">
                   <div class="portfolio__item-info__intro"
                   *ngFor="let pmain of main.description">
                       <p class="paragraph u-color-white" *ngIf="pmain.title">{{pmain.title}}</p>
-                      <p class="paragraph u-color-white">{{pmain.main}}</p>
+                      <p class="paragraph u-color-white">{{pmain.main}}
+                      </p>
                         <ul class="paragraph u-color-white" *ngIf="pmain.courses">
                           <li *ngFor="let course of pmain.courses">
                             {{course}}
@@ -37,77 +38,7 @@
                   </div>
               </div>
           </article>
-<!--
-          <article class="portfolio__item">
-             <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + apmImgDraft +')'}" [lazyLoad] = "apmImg"
-              data-portfolio="AMP">
-                <a href="https://github.com/DeborahK/Angular-Routing" target="_blank">
-                  <span #ampTarget class="portfolio__item-bg-button"></span></a>
-                  <ul class="portfolio__item-cta">
-                      <li class="portfolio__item-cta__item">
-                          <a href="https://github.com/DeborahK/Angular-Routing" target="_blank" class="portfolio__item-cta__link">
-                              <i class="fa fa-github portfolio__item-cta__icon"></i>
-                          </a>
-                      </li>
-                      <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                      (click)="onToggleContentAmp($event, ampTarget)">
-                        <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
-                          [class.fa-angle-up]="ampContent"[class.fa-angle-down]="!ampContent"></i></a>
-                      </li>
-                  </ul>
-              </div>
-              <div class="portfolio__item-info"
-              ng-style="{'visibility': animationStateAmp ? 'visible' : 'hidden'}"
-              [@slideInOut]="animationStateAmp">
-                  <div class="portfolio__item-info__intro">
-                      <p class="paragraph u-color-white">CRUD App
-                        <br>
-                        <br>
-                        The app was recreated, based on Deborah Kurata courses, completed on PLURALSIGHT
-                      </p>
-                        <ul class="paragraph u-color-white">
-                          <li>Angular: Getting Started</li>
-                          <li>Angular: Reactive Forms</li>
-                          <li>Angular: Routing</li>
-                        </ul>
-                        <p class="paragraph u-color-white">
-                        Techstack: JavaScript, Angular, ES6, HTML5, CSS3, Node.js, Npm.
-                        </p>
-                  </div>
-              </div>
-          </article>
 
-          <article class="portfolio__item">
-              <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + todoListImgDraft +')'}" [lazyLoad] = "todoListImg"
-                data-portfolio="todo_list">
-                <a href="https://pptodolist.herokuapp.com" target="_blank">
-                <span #toDoTarget class="portfolio__item-bg-button"></span></a>
-                  <ul class="portfolio__item-cta">
-                      <li class="portfolio__item-cta__item">
-                          <a href="https://github.com/Anuradis/toDoList-onHeroku" target="_blank" class="portfolio__item-cta__link">
-                              <i class="fa fa-github portfolio__item-cta__icon"></i>
-                          </a>
-                      </li>
-                      <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                      (click)="onToggleContentToDo($event, toDoTarget)">
-                        <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info">
-                          <i class ="fa fa-2x portfolio__item-cta__icon"
-                          [class.fa-angle-up]="toDoContentContent"[class.fa-angle-down]="!toDoContentContent"></i>
-                        </a></li>
-                  </ul>
-              </div>
-              <div class="portfolio__item-info"
-              ng-style="{'visibility': animationStateToDo ? 'visible' : 'hidden'}"
-              [@slideInOut]="animationStateToDo">
-                  <div class="portfolio__item-info__intro">
-                      <p class="paragraph u-color-white">Each user can create his own todo list, by providing list name after slash e.g. "baseURL/your_list". Thanks to MongoDB list is saved and stored in data base.
-                        <br>
-                        <br>
-                        Technstack: HTML5, CSS3, Node.js, Express.js, Mongoose (Mongo DB), Npm.
-                      </p>
-                  </div>
-              </div>
-          </article> -->
       </div>
       <div class="portfolio__content-sub "
       *ngFor="let sub of subProjects"
@@ -126,9 +57,10 @@
                     </a>
                 </li>
                 <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                (click)="onToggleContentFetchServer($event, fetchNewsTarget)">
+                (click)="onToggleContent($event, fetchNewsTarget, sub?.id)">
                   <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
-                    [class.fa-angle-up]="fetchServerContent"[class.fa-angle-down]="!fetchServerContent"></i></a>
+                    [class.fa-angle-up]="onArrowSwitch(sub?.id)"
+                    [class.fa-angle-down]="!onArrowSwitch(sub?.id)"></i></a>
                 </li>
             </ul>
         </div>
@@ -142,73 +74,6 @@
             </div>
         </div>
     </article>
-
-    <!-- <article class="portfolio__item">
-      <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + playballImgDraft +')'}" [lazyLoad] = "playballImg"
-      data-portfolio="Playball_game">
-        <a href="https://anuradis.github.io/playball-game/" target="_blank">
-          <span #playballTarget class="portfolio__item-bg-button"></span></a>
-          <ul class="portfolio__item-cta">
-              <li class="portfolio__item-cta__item">
-                  <a href="https://github.com/Anuradis/playball-game" target="_blank" class="portfolio__item-cta__link">
-                      <i class="fa fa-github portfolio__item-cta__icon"></i>
-                  </a>
-              </li>
-              <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-              (click)="onToggleContentPlayball($event, playballTarget)">
-                <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
-                  [class.fa-angle-up]="playballContent"[class.fa-angle-down]="!playballContent"></i></a>
-              </li>
-          </ul>
-      </div>
-      <div class="portfolio__item-info"
-      ng-style="{'visibility': animationStatePlayball ? 'visible' : 'hidden'}"
-      [@slideInOut]="animationStatePlayball">
-          <div class="portfolio__item-info__intro">
-              <p class="paragraph u-color-white">Playball-game was created by "MafiaJs" team. The main purpose was to enchance JavaScript skills and get first experience in team project.
-                It's the falling ball game; in order to win the user has to score (kill) as many balls as he can, before they fall down.
-                <br>
-                <br>
-                The project ended-up unfinished and dusted. After few months, I decided to work on it in order to complete the demo version.
-                The app is hosted on github pages.
-                <br>
-                <br>
-                Techstack: JavaScript ES6, HTML5, CSS3, Node.js, Npm, Webpack.
-              </p>
-          </div>
-      </div>
-  </article>
-
-  <article  class="portfolio__item">
-    <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + webDesignImgDraft +')'}" [lazyLoad] = "webDesignImg"
-    data-portfolio="Example-web-design">
-      <a href="https://anuradis.github.io/Example-web-design/" target="_blank">
-        <span  class="portfolio__item-bg-button"></span></a>
-        <ul class="portfolio__item-cta">
-            <li class="portfolio__item-cta__item">
-                <a href="https://github.com/Anuradis/Example-web-design" target="_blank" class="portfolio__item-cta__link">
-                    <i class="fa fa-github portfolio__item-cta__icon"></i>
-                </a>
-            </li>
-            <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-            (click)="onToggleContentWebDesign($event, webDesignTarget)">
-              <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
-                [class.fa-angle-up]="webDesignContent"[class.fa-angle-down]="!webDesignContent"></i></a>
-            </li>
-        </ul>
-    </div>
-    <div #webDesignTarget class="portfolio__item-info"
-    ng-style="{'visibility': animationStateWebDesign ? 'visible' : 'hidden'}"
-    [@slideInOut]="animationStateWebDesign">
-        <div class="portfolio__item-info__intro">
-            <p class="paragraph u-color-white">Web design page – small app created as an excerise to practice basic rules of languages
-              <br>
-              <br>
-              Techstack: HTML5, CSS3.
-            </p>
-        </div>
-    </div>
-  </article> -->
 
       </div>
   </div>

@@ -47,9 +47,6 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   showMore = true;
   showMoreName = 'See More';
 
-  animationState = [];
-  conentet = [];
-
   mainProjects: any;
   subProjects: any;
 
@@ -59,8 +56,6 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
       next: data => {
         this.mainProjects = data[0].mainProjects;
         this.subProjects = data[0].subProjects;
-        console.log(this.mainProjects);
-        console.log(this.subProjects);
       }
     });
   }
@@ -71,54 +66,76 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
     this.sendSeeMoreElement.emit(this.someFiled);
   }
 
-  // onToggleContentRefactored($event, target: Element, animationState: string, content: boolean) {
-  //   this.animationState = this.animationState === 'out' ? 'in' : 'out';
-  //   this.content = !this.content;
-  //   $event.preventDefault();
-  //   target.scrollIntoView();
-  // }
-
-  onToggleContentWeatherApp($event, target: Element, ): void {
-    this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
-    this.weatherAppContent = !this.weatherAppContent;
+  onToggleContent($event, target: Element, id: number) {
+    console.log(id);
+    switch (id) {
+      case 0:
+        this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
+        this.weatherAppContent = !this.weatherAppContent;
+        break;
+      case 1:
+        this.animationStateAmp = this.animationStateAmp === 'out' ? 'in' : 'out';
+        this.ampContent = !this.ampContent;
+        break;
+      case 2:
+        this.animationStateToDo = this.animationStateToDo === 'out' ? 'in' : 'out';
+        this.toDoContentContent = !this.toDoContentContent;
+        break;
+      case 3:
+        this.animationStateFetchServer = this.animationStateFetchServer === 'out' ? 'in' : 'out';
+        this.fetchServerContent = !this.fetchServerContent;
+        break;
+      case 4:
+        this.animationStatePlayball = this.animationStatePlayball === 'out' ? 'in' : 'out';
+        this.playballContent = !this.playballContent;
+        break;
+      case 5:
+        this.animationStateWebDesign = this.animationStateWebDesign === 'out' ? 'in' : 'out';
+        this.webDesignContent = !this.webDesignContent;
+        break;
+        default:
+    }
     $event.preventDefault();
-    target.scrollIntoView();
-}
+        // target.scrollIntoView();
+  }
 
-onToggleContentAmp($event, el: Element): void {
-  this.animationStateAmp = this.animationStateAmp === 'out' ? 'in' : 'out';
-  this.ampContent = !this.ampContent;
-  $event.preventDefault();
-  el.scrollIntoView();
-}
+  onArrowSwitch(id: number): boolean {
+    switch (id) {
+      case 0:
+        return this.weatherAppContent;
+      case 1:
+        return this.ampContent;
+      case 2:
+        return this.toDoContentContent;
+      case 3:
+        return this.fetchServerContent;
+      case 4:
+        return this.playballContent;
+      case 5:
+        return this.webDesignContent;
+    }
+  }
 
-onToggleContentToDo($event, el: Element): void {
-  this.animationStateToDo = this.animationStateToDo === 'out' ? 'in' : 'out';
-  this.toDoContentContent = !this.toDoContentContent;
-  $event.preventDefault();
-  el.scrollIntoView();
-}
+  onAnimationState(id: number): string {
+    switch (id) {
+      case 0:
+        console.log(`case 0 - ${id}`);
+        return this.animationStateWeatherApp;
+      case 1:
+        console.log(`case 1 - ${id}`);
+        return this.animationStateAmp;
+      case 2:
+        return this.animationStateToDo;
+      case 3:
+        return this.animationStateFetchServer;
+      case 4:
+        return this.animationStatePlayball;
+      case 5:
+        return this.animationStateWebDesign;
+        console.log(`case default - ${id}`);
+    }
 
-onToggleContentFetchServer($event, el: Element): void {
-  this.animationStateFetchServer = this.animationStateFetchServer === 'out' ? 'in' : 'out';
-  this.fetchServerContent = !this.fetchServerContent;
-  $event.preventDefault();
-  el.scrollIntoView();
-}
-
-onToggleContentPlayball($event, el: Element): void {
-  this.animationStatePlayball = this.animationStatePlayball === 'out' ? 'in' : 'out';
-  this.playballContent = !this.playballContent;
-  $event.preventDefault();
-  el.scrollIntoView();
-}
-
-onToggleContentWebDesign($event, el: Element): void {
-  this.animationStateWebDesign = this.animationStateWebDesign === 'out' ? 'in' : 'out';
-  this.webDesignContent = !this.webDesignContent;
-  $event.preventDefault();
-  el.scrollIntoView();
-}
+  }
 
 onShowMore(event): void {
 

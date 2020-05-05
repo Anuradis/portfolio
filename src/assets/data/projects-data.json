@@ -3,20 +3,23 @@
     "mainProjects" :
     [
       {
+        "id": 0,
         "name": "Weather-app",
         "img": "../../assets/images/weather_app.png",
         "imgDraft": "../../assets/images/weather_app-min.png",
         "sourceURL": "https://yourfreeweatherapp.web.app/",
         "sourceRepo": "https://bitbucket.org/jsmafia/weatherapp-angular/src/master/",
+        "animationState": "animationStateWeatherApp",
         "description":
         [
           {
             "main": "Co-creator of WeatherApp - project realized at Summer Front-End Academy at GL.",
-            "techstack": "Techstack: HTML5, Css3, JavaScript ES6, Angular, Leaflet."
+            "techstack": "Techstack: HTML5, CSS3, JavaScript ES6, Angular, Leaflet."
           }
         ]
       },
       {
+        "id": 1,
         "name": "ACME",
         "img": "../../assets/images/apm.png",
         "imgDraft": "../../assets/images/apm-min.png",
@@ -33,6 +36,7 @@
         ]
       },
       {
+        "id": 2,
         "name": "Todo-list",
         "img": "../../assets/images/todo_list.png",
         "imgDraft": "../../assets/images/todo_list-min.png",
@@ -48,6 +52,7 @@
       }],
       "subProjects":[
       {
+        "id": 3,
         "name": "Fetch-news-server",
         "img": "../../assets/images/fetch_news-server.png",
         "imgDraft": "../../assets/images/fetch_news-server-min.png",
@@ -62,6 +67,7 @@
         ]
       },
       {
+        "id": 4,
         "name": "Playball-game",
         "img": "../../assets/images/playball_game.png",
         "imgDraft": "../../assets/images/playball_game-min.png",
@@ -77,6 +83,7 @@
         ]
       },
       {
+        "id": 5,
         "name": "Example-web-design",
         "img": "../../assets/images/web-design.png",
         "imgDraft": "../../assets/images/web-design-min.png",
