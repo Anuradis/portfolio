@@ -4,6 +4,23 @@
     [
       {
         "id": 0,
+        "name": "Jar-Moneybox-App",
+        "img": "../../assets/images/moneybox.png",
+        "imgDraft": "../../assets/images/moneybox-min.png",
+        "sourceURL": "https://jar-moneybox.web.app/",
+        "sourceRepo": "https://github.com/Anuradis/jar-moneybox",
+        "description":
+        [
+          {
+            "title": "Jar-Moneybox",
+            "main": "It's a budget management system. The user is enabled to perform banking-like operations: ",
+            "courses" : ["- creating new account", "- selecting currency", "- money transfers", "- transfer history"],
+            "techstack": "Techstack: TypeScript, Angular, Reactive Froms, ES6, HTML5, CSS3, Bootstrap 4, Node.js, Npm."
+          }
+        ]
+      },
+      {
+        "id": 1,
         "name": "Weather-app",
         "img": "../../assets/images/weather_app.png",
         "imgDraft": "../../assets/images/weather_app-min.png",
@@ -15,23 +32,6 @@
           {
             "main": "Co-creator of WeatherApp - project realized at Summer Front-End Academy at GL.",
             "techstack": "Techstack: HTML5, CSS3, JavaScript ES6, Angular, Leaflet."
-          }
-        ]
-      },
-      {
-        "id": 1,
-        "name": "ACME",
-        "img": "../../assets/images/apm.png",
-        "imgDraft": "../../assets/images/apm-min.png",
-        "sourceURL": "https://github.com/DeborahK/Angular-Routing",
-        "sourceRepo": "https://github.com/DeborahK/Angular-Routing",
-        "description":
-        [
-          {
-            "title": "CRUD App",
-            "main": "The app was recreated, based on Deborah Kurata courses, completed on PLURALSIGHT",
-            "courses" : ["Angular: Getting Started", "Angular: Reactive Forms", "Angular: Routing"],
-            "techstack": "Techstack: JavaScript, Angular, ES6, HTML5, CSS3, Node.js, Npm."
           }
         ]
       },
@@ -49,8 +49,7 @@
             "techstack": "HTML5, CSS3, Node.js, Express.js, Mongoose (Mongo DB), Npm."
           }
         ]
-      }],
-      "subProjects":[
+      },
       {
         "id": 3,
         "name": "Fetch-news-server",

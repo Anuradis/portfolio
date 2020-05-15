@@ -15,20 +15,6 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   @ViewChild('seeMore', {static: false}) someFiled: ElementRef;
   @Output() sendSeeMoreElement = new EventEmitter<ElementRef>();
 
-  // weaterAppImg: string = '../../assets/images/weather_app.png';
-  // weaterAppImgDraft: string = '../../assets/images/weather_app-min.png';
-  // apmImg: string = '../../assets/images/apm.png';
-  // apmImgDraft: string = '../../assets/images/apm-min.png';
-  // todoListImg: string = '../../assets/images/todo_list.png';
-  // todoListImgDraft: string = '../../assets/images/todo_list-min.png';
-  // fetchNewsImg: string = '../../assets/images/fetch_news-server.png';
-  // fetchNewsImgDraft: string = '../../assets/images/fetch_news-server-min.png';
-  // playballImg: string = '../../assets/images/playball_game.png';
-  // playballImgDraft: string = '../../assets/images/playball_game-min.png';
-  // webDesignImg: string = '../../assets/images/web-design.png';
-  // webDesignImgDraft: string = '../../assets/images/web-design-min.png';
-
-
   weatherAppContent = false;
   ampContent = false;
   toDoContentContent = false;
@@ -49,13 +35,16 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
 
   mainProjects: any;
   subProjects: any;
+  projects: any;
 
   constructor(private projectsDataService: ProjectsDataService) {
     this.projectsDataService.getMyProjectsData()
     .subscribe({
       next: data => {
-        this.mainProjects = data[0].mainProjects;
-        this.subProjects = data[0].subProjects;
+        this.projects = data[0].mainProjects;
+        console.log(this.projects);
+        this.subProjects = this.projects.slice(0, 3);
+        this.mainProjects = this.subProjects;
       }
     });
   }
@@ -67,7 +56,6 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   }
 
   onToggleContent($event, target: Element, id: number) {
-    console.log(id);
     switch (id) {
       case 0:
         this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
@@ -119,10 +107,8 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   onAnimationState(id: number): string {
     switch (id) {
       case 0:
-        console.log(`case 0 - ${id}`);
         return this.animationStateWeatherApp;
       case 1:
-        console.log(`case 1 - ${id}`);
         return this.animationStateAmp;
       case 2:
         return this.animationStateToDo;
@@ -132,20 +118,19 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
         return this.animationStatePlayball;
       case 5:
         return this.animationStateWebDesign;
-        console.log(`case default - ${id}`);
     }
 
   }
 
 onShowMore(event): void {
-
   this.animationStateShowMore = this.animationStateShowMore === 'out' ? 'in' : 'out';
   if (this.animationStateShowMore === 'out') {
-      this.showMoreName = 'See More';
+          this.mainProjects = this.subProjects;
+          this.showMoreName = 'See More';
      } else {
-    this.showMoreName = 'See Less';
-    event.preventDefault();
-  }
+          this.mainProjects = this.projects;
+          event.preventDefault();
+          this.showMoreName = 'See Less';
+      }
 }
-
 }

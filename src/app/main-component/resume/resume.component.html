@@ -6,7 +6,7 @@
 
 <section class="resume__experience">
   <h2 class="heading-secondary u-margin-bottom-small">{{skillsArr?.title}}</h2>
-  <ul class="list" *ngFor="let skill of skillsArr?.skills">
+  <ul class="list" *ngFor="let skill of skillsArr?.skills; let i = index">
     <li class="list__item paragraph">{{skill}}</li>
   </ul>
 </section>
