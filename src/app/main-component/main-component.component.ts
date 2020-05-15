@@ -1,5 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { SlideInOutAnimation } from '../../assets/animations/animations';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { trigger, transition, useAnimation } from '@angular/animations';
 import { fadeIn, bounceInDown } from 'ng-animate';
 
@@ -10,9 +9,9 @@ import { fadeIn, bounceInDown } from 'ng-animate';
   animations: [trigger('lightSpeedIn', [transition('* => *', useAnimation(fadeIn, {params: { Opacity: 0,
     timing: 1.2,
   }}
-    ))], ), trigger('rubberBand', [transition('* => *', useAnimation(bounceInDown, {params: { Opacity: 0, timing: 3}}
+    ))], ),
+     trigger('rubberBand', [transition('* => *', useAnimation(bounceInDown, {params: { Opacity: 0, timing: 3}}
       ))], )
-    , SlideInOutAnimation
 ],
 })
 
@@ -22,41 +21,10 @@ export class MainComponentComponent implements OnInit {
   rubberBand: Animation;
   lightSpeedIn: Animation;
 
-  weaterAppImg: string = '../../assets/images/weather_app.png';
-  weaterAppImgDraft: string = '../../assets/images/weather_app-min.png';
-  apmImg: string = '../../assets/images/apm.png';
-  apmImgDraft: string = '../../assets/images/apm-min.png';
-  todoListImg: string = '../../assets/images/todo_list.png';
-  todoListImgDraft: string = '../../assets/images/todo_list-min.png';
-  fetchNewsImg: string = '../../assets/images/fetch_news-server.png';
-  fetchNewsImgDraft: string = '../../assets/images/fetch_news-server-min.png';
-  playballImg: string = '../../assets/images/playball_game.png';
-  playballImgDraft: string = '../../assets/images/playball_game-min.png';
-  webDesignImg: string = '../../assets/images/web-design.png';
-  webDesignImgDraft: string = '../../assets/images/web-design-min.png';
-
-
+  receivedTemplateChildVar: ElementRef;
   windowTop = false;
   scrollOn = true;
   scrollPositionY = 0;
-
-  weatherAppContent = false;
-  ampContent = false;
-  toDoContentContent = false;
-  fetchServerContent = false;
-  playballContent = false;
-  webDesignContent = false;
-
-  animationStateWeatherApp = 'out';
-  animationStateFetchServer = 'out';
-  animationStateToDo = 'out';
-  animationStateShowMore = 'out';
-  animationStateAmp = 'out';
-  animationStatePlayball = 'out';
-  animationStateWebDesign = 'out';
-
-  showMore = true;
-  showMoreName = 'See More';
 
   @HostListener('window:scroll', []) onScrollEvent(): void {
     if (Math.floor(window.scrollY) > 700) {
@@ -67,70 +35,20 @@ export class MainComponentComponent implements OnInit {
       this.scrollPositionY = Math.floor(window.scrollY);
     }
 }
+
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
-  onScroll(el: Element): void {
+  onScrollBtn(el: ElementRef): void {
     if (this.scrollPositionY > 700) {
       window.scrollTo(0, 0);
       } else if (this.scrollPositionY <= 700) {
-        el.scrollIntoView();
+        el.nativeElement.scrollIntoView();
        }
   }
 
-  onToggleContentWeatherApp($event, target: Element): void {
-      this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
-      this.weatherAppContent = !this.weatherAppContent;
-      $event.preventDefault();
-      target.scrollIntoView();
+  receiveElement($event): void {
+  this.receivedTemplateChildVar = $event;
   }
-
-  onToggleContentAmp($event, el: Element): void {
-    this.animationStateAmp = this.animationStateAmp === 'out' ? 'in' : 'out';
-    this.ampContent = !this.ampContent;
-    $event.preventDefault();
-    el.scrollIntoView();
-  }
-
-  onToggleContentToDo($event, el: Element): void {
-    this.animationStateToDo = this.animationStateToDo === 'out' ? 'in' : 'out';
-    this.toDoContentContent = !this.toDoContentContent;
-    $event.preventDefault();
-    el.scrollIntoView();
-  }
-
-  onToggleContentFetchServer($event, el: Element): void {
-    this.animationStateFetchServer = this.animationStateFetchServer === 'out' ? 'in' : 'out';
-    this.fetchServerContent = !this.fetchServerContent;
-    $event.preventDefault();
-    el.scrollIntoView();
-  }
-
-  onToggleContentPlayball($event, el: Element): void {
-    this.animationStatePlayball = this.animationStatePlayball === 'out' ? 'in' : 'out';
-    this.playballContent = !this.playballContent;
-    $event.preventDefault();
-    el.scrollIntoView();
-  }
-
-  onToggleContentWebDesign($event, el: Element): void {
-    this.animationStateWebDesign = this.animationStateWebDesign === 'out' ? 'in' : 'out';
-    this.webDesignContent = !this.webDesignContent;
-    $event.preventDefault();
-    el.scrollIntoView();
-  }
-
-
-
-  onShowMore($event): void {
-    this.animationStateShowMore = this.animationStateShowMore === 'out' ? 'in' : 'out';
-    if (this.animationStateShowMore === 'out') {
-        this.showMoreName = 'See More';
-       } else {
-      this.showMoreName = 'See Less';
-      $event.preventDefault();
-    }
-}
 }

@@ -1,0 +1,214 @@
+<section class="portfolio">
+  <header class="portfolio__header">
+      <h3 class="heading-tertiary u-color-white">My projects</h3>
+  </header>
+  <div class="portfolio__content">
+      <div class="portfolio__content-main">
+          <article #weatherAppTarget class="portfolio__item">
+              <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + weaterAppImgDraft +')'}" [lazyLoad] = "weaterAppImg" data-portfolio="weather_app">
+                <a href="https://yourfreeweatherapp.web.app/" target="_blank">
+                  <span class="portfolio__item-bg-button"></span></a>
+                  <ul class="portfolio__item-cta">
+                      <li class="portfolio__item-cta__item">
+                          <a href="https://bitbucket.org/jsmafia/weatherapp-angular/src/master/" target="_blank" class="portfolio__item-cta__link">
+                              <i class="fa fa-github portfolio__item-cta__icon"></i>
+                          </a>
+                      </li>
+                      <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
+                      (click)="onToggleContentWeatherApp($event, weatherAppTarget)"><a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                        [class.fa-angle-up]="weatherAppContent"[class.fa-angle-down]="!weatherAppContent"></i></a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="portfolio__item-info"
+              ng-style="{'visibility': animationStateWeatherApp ? 'visible' : 'hidden'}"
+              [@slideInOut]="animationStateWeatherApp">
+                  <div class="portfolio__item-info__intro">
+                      <p class="paragraph u-color-white">
+                        Co-creator of WeatherApp -  project realized at Summer Front-End Academy at GL.
+                        <br>
+                        <br>
+                         Techstack: HTML5, Css3, JavaScript ES6, Angular, Leaflet. </p>
+                  </div>
+              </div>
+          </article>
+
+          <article class="portfolio__item">
+             <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + apmImgDraft +')'}" [lazyLoad] = "apmImg"
+              data-portfolio="AMP">
+                <a href="https://github.com/DeborahK/Angular-Routing" target="_blank">
+                  <span #ampTarget class="portfolio__item-bg-button"></span></a>
+                  <ul class="portfolio__item-cta">
+                      <li class="portfolio__item-cta__item">
+                          <a href="https://github.com/DeborahK/Angular-Routing" target="_blank" class="portfolio__item-cta__link">
+                              <i class="fa fa-github portfolio__item-cta__icon"></i>
+                          </a>
+                      </li>
+                      <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
+                      (click)="onToggleContentAmp($event, ampTarget)">
+                        <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                          [class.fa-angle-up]="ampContent"[class.fa-angle-down]="!ampContent"></i></a>
+                      </li>
+                  </ul>
+              </div>
+              <div class="portfolio__item-info"
+              ng-style="{'visibility': animationStateAmp ? 'visible' : 'hidden'}"
+              [@slideInOut]="animationStateAmp">
+                  <div class="portfolio__item-info__intro">
+                      <p class="paragraph u-color-white">CRUD App
+                        <br>
+                        <br>
+                        The app was recreated, based on Deborah Kurata courses, completed on PLURALSIGHT
+                      </p>
+                        <ul class="paragraph u-color-white">
+                          <li>Angular: Getting Started</li>
+                          <li>Angular: Reactive Forms</li>
+                          <li>Angular: Routing</li>
+                        </ul>
+                        <p class="paragraph u-color-white">
+                        Techstack: JavaScript, Angular, ES6, HTML5, CSS3, Node.js, Npm.
+                        </p>
+                  </div>
+              </div>
+          </article>
+
+          <article class="portfolio__item">
+              <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + todoListImgDraft +')'}" [lazyLoad] = "todoListImg"
+                data-portfolio="todo_list">
+                <a href="https://pptodolist.herokuapp.com" target="_blank">
+                <span #toDoTarget class="portfolio__item-bg-button"></span></a>
+                  <ul class="portfolio__item-cta">
+                      <li class="portfolio__item-cta__item">
+                          <a href="https://github.com/Anuradis/toDoList-onHeroku" target="_blank" class="portfolio__item-cta__link">
+                              <i class="fa fa-github portfolio__item-cta__icon"></i>
+                          </a>
+                      </li>
+                      <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
+                      (click)="onToggleContentToDo($event, toDoTarget)">
+                        <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info">
+                          <i class ="fa fa-2x portfolio__item-cta__icon"
+                          [class.fa-angle-up]="toDoContentContent"[class.fa-angle-down]="!toDoContentContent"></i>
+                        </a></li>
+                  </ul>
+              </div>
+              <div class="portfolio__item-info"
+              ng-style="{'visibility': animationStateToDo ? 'visible' : 'hidden'}"
+              [@slideInOut]="animationStateToDo">
+                  <div class="portfolio__item-info__intro">
+                      <p class="paragraph u-color-white">Each user can create his own todo list, by providing list name after slash e.g. "baseURL/your_list". Thanks to MongoDB list is saved and stored in data base.
+                        <br>
+                        <br>
+                        Technstack: HTML5, CSS3, Node.js, Express.js, Mongoose (Mongo DB), Npm.
+                      </p>
+                  </div>
+              </div>
+          </article>
+      </div>
+      <div class="portfolio__content-sub"
+      ng-style="{'visibility': animationStateShowMore ? 'visible' : 'hidden'}"
+      [@slideInOut]="animationStateShowMore"
+      >
+      <article class="portfolio__item">
+        <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + fetchNewsImgDraft +')'}" [lazyLoad] = "fetchNewsImg"
+         data-portfolio="Fetch-news-server">
+          <a href="https://github.com/Anuradis/fetchnewsserver/blob/master/README.md" target="_blank">
+            <span #fetchNewsTarget class="portfolio__item-bg-button"></span></a>
+            <ul class="portfolio__item-cta">
+                <li class="portfolio__item-cta__item">
+                    <a href="https://github.com/Anuradis/fetchnewsserver" target="_blank" class="portfolio__item-cta__link">
+                        <i class="fa fa-github portfolio__item-cta__icon"></i>
+                    </a>
+                </li>
+                <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
+                (click)="onToggleContentFetchServer($event, fetchNewsTarget)">
+                  <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                    [class.fa-angle-up]="fetchServerContent"[class.fa-angle-down]="!fetchServerContent"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="portfolio__item-info"
+        ng-style="{'visibility': animationStateFetchServer ? 'visible' : 'hidden'}"
+        [@slideInOut]="animationStateFetchServer">
+            <div class="portfolio__item-info__intro">
+                <p class="paragraph u-color-white">Creator of NewsFetchApp – News are fetched from the server and are being displayed chronologically in web app.
+                  <br>
+                  <br>
+                  Techstack: JavaScript ES6, HTML5, CSS3, Node.js, Npm, Webpack.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <article class="portfolio__item">
+      <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + playballImgDraft +')'}" [lazyLoad] = "playballImg"
+      data-portfolio="Playball_game">
+        <a href="https://anuradis.github.io/playball-game/" target="_blank">
+          <span #playballTarget class="portfolio__item-bg-button"></span></a>
+          <ul class="portfolio__item-cta">
+              <li class="portfolio__item-cta__item">
+                  <a href="https://github.com/Anuradis/playball-game" target="_blank" class="portfolio__item-cta__link">
+                      <i class="fa fa-github portfolio__item-cta__icon"></i>
+                  </a>
+              </li>
+              <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
+              (click)="onToggleContentPlayball($event, playballTarget)">
+                <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                  [class.fa-angle-up]="playballContent"[class.fa-angle-down]="!playballContent"></i></a>
+              </li>
+          </ul>
+      </div>
+      <div class="portfolio__item-info"
+      ng-style="{'visibility': animationStatePlayball ? 'visible' : 'hidden'}"
+      [@slideInOut]="animationStatePlayball">
+          <div class="portfolio__item-info__intro">
+              <p class="paragraph u-color-white">Playball-game was created by "MafiaJs" team. The main purpose was to enchance JavaScript skills and get first experience in team project.
+                It's the falling ball game; in order to win the user has to score (kill) as many balls as he can, before they fall down.
+                <br>
+                <br>
+                The project ended-up unfinished and dusted. After few months, I decided to work on it in order to complete the demo version.
+                The app is hosted on github pages.
+                <br>
+                <br>
+                Techstack: JavaScript ES6, HTML5, CSS3, Node.js, Npm, Webpack.
+              </p>
+          </div>
+      </div>
+  </article>
+
+  <article  class="portfolio__item">
+    <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + webDesignImgDraft +')'}" [lazyLoad] = "webDesignImg"
+    data-portfolio="Example-web-design">
+      <a href="https://anuradis.github.io/Example-web-design/" target="_blank">
+        <span  class="portfolio__item-bg-button"></span></a>
+        <ul class="portfolio__item-cta">
+            <li class="portfolio__item-cta__item">
+                <a href="https://github.com/Anuradis/Example-web-design" target="_blank" class="portfolio__item-cta__link">
+                    <i class="fa fa-github portfolio__item-cta__icon"></i>
+                </a>
+            </li>
+            <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
+            (click)="onToggleContentWebDesign($event, webDesignTarget)">
+              <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
+                [class.fa-angle-up]="webDesignContent"[class.fa-angle-down]="!webDesignContent"></i></a>
+            </li>
+        </ul>
+    </div>
+    <div #webDesignTarget class="portfolio__item-info"
+    ng-style="{'visibility': animationStateWebDesign ? 'visible' : 'hidden'}"
+    [@slideInOut]="animationStateWebDesign">
+        <div class="portfolio__item-info__intro">
+            <p class="paragraph u-color-white">Web design page – small app created as an excerise to practice basic rules of languages
+              <br>
+              <br>
+              Techstack: HTML5, CSS3.
+            </p>
+        </div>
+    </div>
+</article>
+      </div>
+  </div>
+  <footer class="portfolio__footer">
+      <button #seeMore class="cta cta--white paragraph paragraph--med u-color-white u-align-block-center portfolio__show-more"
+      (click)="onShowMore($event)">{{showMoreName}}</button>
+  </footer>
+</section>

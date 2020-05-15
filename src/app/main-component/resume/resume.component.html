@@ -1,0 +1,28 @@
+<section class="resume__intro">
+<h2 class="heading-secondary u-color-white u-margin-bottom-med">{{aboutArr?.title}}</h2>
+  <p class="paragraph u-color-white">{{aboutArr?.paragraph}} </p>
+  <p class="paragraph u-color-white u-margin-bottom-smaller">{{aboutArr?.secondParagraph}}</p>
+</section>
+
+<section class="resume__experience">
+  <h2 class="heading-secondary u-margin-bottom-small">{{skillsArr?.title}}</h2>
+  <ul class="list" *ngFor="let skill of skillsArr?.skills">
+    <li class="list__item paragraph">{{skill}}</li>
+  </ul>
+</section>
+
+  <section class="resume__education">
+  <h2 class="heading-secondary u-color-white">{{experienceArr?.title}}</h2>
+  <ul class="list" *ngFor="let exp of experienceArr?.experience">
+      <li class="list__item">
+          <p class="paragraph u-color-white">
+              <span class="u-weight-bld">{{exp.jobTitle}}</span>
+              <br>{{exp.location}}
+              <br>
+              <span class="paragraph--small">{{exp.dateRange}}</span>
+              <br>
+          </p>
+      </li>
+      <br>
+  </ul>
+</section>
