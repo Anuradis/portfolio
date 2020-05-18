@@ -44,38 +44,6 @@
       *ngIf="animationStateShowMore"
         [@slideInOut]="animationStateShowMore"
 >
-      <!-- <article class="portfolio__item">
-         ng-style="{'visibility': animationStateShowMore ? 'visible' : 'hidden'}"
-         *ngFor="let sub of subProjects"
-        <div class="portfolio__item-preview" [ngStyle]="{'background-image': 'url(' + sub.img +')'}" [lazyLoad] = "sub.imgDraft"
-         [title]="sub.name">
-          <a [href]="sub.sourceURL" target="_blank">
-            <span #fetchNewsTarget class="portfolio__item-bg-button"></span></a>
-            <ul class="portfolio__item-cta">
-                <li class="portfolio__item-cta__item">
-                    <a [href]="sub.sourceRepo" target="_blank" class="portfolio__item-cta__link">
-                        <i class="fa fa-github portfolio__item-cta__icon"></i>
-                    </a>
-                </li>
-                <li class="portfolio__item-cta__item portfolio__item-cta__item--no-link"
-                (click)="onToggleContent($event, fetchNewsTarget, sub?.id)">
-                  <a href="#" class="portfolio__item-cta__link portfolio__item-cta__link--info"><i class ="fa fa-2x portfolio__item-cta__icon"
-                    [class.fa-angle-up]="onArrowSwitch(sub?.id)"
-                    [class.fa-angle-down]="!onArrowSwitch(sub?.id)"></i></a>
-                </li>
-            </ul>
-        </div>
-        <div class="portfolio__item-info"
-        ng-style="{'visibility': animationStateFetchServer ? 'visible' : 'hidden'}"
-        [@slideInOut]="animationStateFetchServer">
-            <div class="portfolio__item-info__intro" *ngFor="let p of sub.description">
-                <p class="paragraph u-color-white">{{p.main}}</p>
-                  <p class="paragraph u-color-white" *ngIf="p.sub">{{p.sub}}</p>
-                    <p class="paragraph u-color-white" >{{p.techstack}}</p>
-            </div>
-        </div>
-    </article> -->
-
       </div>
   </div>
   <footer class="portfolio__footer">

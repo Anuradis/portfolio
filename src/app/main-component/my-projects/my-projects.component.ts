@@ -42,7 +42,6 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
     .subscribe({
       next: data => {
         this.projects = data[0].mainProjects;
-        console.log(this.projects);
         this.subProjects = this.projects.slice(0, 3);
         this.mainProjects = this.subProjects;
       }
@@ -55,7 +54,7 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
     this.sendSeeMoreElement.emit(this.someFiled);
   }
 
-  onToggleContent($event, target: Element, id: number) {
+  onToggleContent($event: Event, target: boolean, id: number) {
     switch (id) {
       case 0:
         this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
@@ -84,7 +83,6 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
         default:
     }
     $event.preventDefault();
-        // target.scrollIntoView();
   }
 
   onArrowSwitch(id: number): boolean {
