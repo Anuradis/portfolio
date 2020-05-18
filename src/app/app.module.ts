@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
 import { ResumeComponent } from './main-component/resume/resume.component';
 import { MyProjectsComponent } from './main-component/my-projects/my-projects.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MyProjectsComponent } from './main-component/my-projects/my-projects.co
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     HttpClientModule,
     BrowserAnimationsModule,
     LazyLoadImageModule.forRoot({

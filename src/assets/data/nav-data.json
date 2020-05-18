@@ -1,0 +1,13 @@
+  [
+    {
+    "header" : "Hello,",
+    "paragraph": "My name is Piotr Pachocki. I'm a Frontend Web Developer, I just like to create great stuff.",
+    "mail": "mailto:pachocki.dev@gmail.com",
+    "linkedIn": "https://www.linkedin.com/in/piotr-pachocki-453342190/",
+    "github": "https://github.com/Anuradis",
+    "logoURL": "../../assets/images/pp_logo.png",
+    "logoDraftURL": "../../assets/images/pp_logo-min.png",
+    "profileImgURL": "../../assets/images/profile_image.png",
+    "profileImgDraftURL": "../../assets/images/profile_image-min.png"
+  }
+]

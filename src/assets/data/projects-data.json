@@ -1,0 +1,102 @@
+[
+  {
+    "mainProjects" :
+    [
+      {
+        "id": 0,
+        "name": "Jar-Moneybox-App",
+        "img": "../../assets/images/moneybox.png",
+        "imgDraft": "../../assets/images/moneybox-min.png",
+        "sourceURL": "https://jar-moneybox.web.app/",
+        "sourceRepo": "https://github.com/Anuradis/jar-moneybox",
+        "description":
+        [
+          {
+            "title": "Jar-Moneybox",
+            "main": "It's a budget management system. The user is enabled to perform banking-like operations: ",
+            "courses" : ["- creating new account", "- selecting currency", "- money transfers", "- transfer history"],
+            "techstack": "Techstack: TypeScript, Angular, Reactive Froms, ES6, HTML5, CSS3, Bootstrap 4, Node.js, Npm."
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "name": "Weather-app",
+        "img": "../../assets/images/weather_app.png",
+        "imgDraft": "../../assets/images/weather_app-min.png",
+        "sourceURL": "https://yourfreeweatherapp.web.app/",
+        "sourceRepo": "https://bitbucket.org/jsmafia/weatherapp-angular/src/master/",
+        "animationState": "animationStateWeatherApp",
+        "description":
+        [
+          {
+            "main": "Co-creator of WeatherApp - project realized at Summer Front-End Academy at GL.",
+            "techstack": "Techstack: HTML5, CSS3, JavaScript ES6, Angular, Leaflet."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Todo-list",
+        "img": "../../assets/images/todo_list.png",
+        "imgDraft": "../../assets/images/todo_list-min.png",
+        "sourceURL": "https://pptodolist.herokuapp.com/",
+        "sourceRepo": "https://github.com/Anuradis/toDoList-onHeroku",
+        "description":
+        [
+          {
+            "main": "Each user can create his own todo list, by providing list name after slash e.g. \"baseURL/your_list\". Thanks to MongoDB list is saved and stored in data base.",
+            "techstack": "HTML5, CSS3, Node.js, Express.js, Mongoose (Mongo DB), Npm."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Fetch-news-server",
+        "img": "../../assets/images/fetch_news-server.png",
+        "imgDraft": "../../assets/images/fetch_news-server-min.png",
+        "sourceURL": "https://github.com/Anuradis/fetchnewsserver/blob/master/README.md",
+        "sourceRepo": "https://github.com/Anuradis/fetchnewsserver",
+        "description":
+        [
+          {
+            "main": "Creator of NewsFetchApp – News are fetched from the server and are being displayed chronologically in web app",
+            "techstack": "Techstack: JavaScript ES6, HTML5, CSS3, Node.js, Npm, Webpack."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Playball-game",
+        "img": "../../assets/images/playball_game.png",
+        "imgDraft": "../../assets/images/playball_game-min.png",
+        "sourceURL": "https://anuradis.github.io/playball-game/",
+        "sourceRepo": "https://github.com/Anuradis/playball-game",
+        "description":
+        [
+          {
+            "main": "Playball-game was created by \"MafiaJs\" team. The main purpose was to enchance JavaScript skills and get first experience in team project. It's the falling ball game; in order to win the user has to score (kill) as many balls as he can, before they fall down.",
+            "sub":  "The project ended-up unfinished and dusted. After few months, I decided to work on it in order to complete the demo version. The app is hosted on github pages.",
+            "techstack": "Techstack: JavaScript ES6, HTML5, CSS3, Node.js, Npm, Webpack."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Example-web-design",
+        "img": "../../assets/images/web-design.png",
+        "imgDraft": "../../assets/images/web-design-min.png",
+        "sourceURL": "https://anuradis.github.io/Example-web-design/",
+        "sourceRepo": "https://github.com/Anuradis/Example-web-design",
+        "description":
+        [
+          {
+            "main": "Web design page – small app created as an excerise to practice basic rules of languages.",
+            "sub": "The project ended-up unfinished and dusted. After few months, I decided to work on it in order to complete the demo version. The app is hosted on github pages.",
+            "techstack": "Techstack: HTML5, CSS3."
+          }
+        ]
+      }
+    ]
+  }
+]

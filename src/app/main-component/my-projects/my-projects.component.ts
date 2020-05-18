@@ -15,20 +15,6 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   @ViewChild('seeMore', {static: false}) someFiled: ElementRef;
   @Output() sendSeeMoreElement = new EventEmitter<ElementRef>();
 
-  // weaterAppImg: string = '../../assets/images/weather_app.png';
-  // weaterAppImgDraft: string = '../../assets/images/weather_app-min.png';
-  // apmImg: string = '../../assets/images/apm.png';
-  // apmImgDraft: string = '../../assets/images/apm-min.png';
-  // todoListImg: string = '../../assets/images/todo_list.png';
-  // todoListImgDraft: string = '../../assets/images/todo_list-min.png';
-  // fetchNewsImg: string = '../../assets/images/fetch_news-server.png';
-  // fetchNewsImgDraft: string = '../../assets/images/fetch_news-server-min.png';
-  // playballImg: string = '../../assets/images/playball_game.png';
-  // playballImgDraft: string = '../../assets/images/playball_game-min.png';
-  // webDesignImg: string = '../../assets/images/web-design.png';
-  // webDesignImgDraft: string = '../../assets/images/web-design-min.png';
-
-
   weatherAppContent = false;
   ampContent = false;
   toDoContentContent = false;
@@ -49,15 +35,16 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
 
   mainProjects: any;
   subProjects: any;
+  projects: any;
 
   constructor(private projectsDataService: ProjectsDataService) {
     this.projectsDataService.getMyProjectsData()
     .subscribe({
       next: data => {
-        this.mainProjects = data[0].mainProjects;
-        this.subProjects = data[0].subProjects;
-        console.log(this.mainProjects);
-        console.log(this.subProjects);
+        this.projects = data[0].mainProjects;
+        console.log(this.projects);
+        this.subProjects = this.projects.slice(0, 3);
+        this.mainProjects = this.subProjects;
       }
     });
   }
@@ -68,57 +55,82 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
     this.sendSeeMoreElement.emit(this.someFiled);
   }
 
-  onToggleContentWeatherApp($event, target: Element): void {
-    this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
-    this.weatherAppContent = !this.weatherAppContent;
+  onToggleContent($event, target: Element, id: number) {
+    switch (id) {
+      case 0:
+        this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
+        this.weatherAppContent = !this.weatherAppContent;
+        break;
+      case 1:
+        this.animationStateAmp = this.animationStateAmp === 'out' ? 'in' : 'out';
+        this.ampContent = !this.ampContent;
+        break;
+      case 2:
+        this.animationStateToDo = this.animationStateToDo === 'out' ? 'in' : 'out';
+        this.toDoContentContent = !this.toDoContentContent;
+        break;
+      case 3:
+        this.animationStateFetchServer = this.animationStateFetchServer === 'out' ? 'in' : 'out';
+        this.fetchServerContent = !this.fetchServerContent;
+        break;
+      case 4:
+        this.animationStatePlayball = this.animationStatePlayball === 'out' ? 'in' : 'out';
+        this.playballContent = !this.playballContent;
+        break;
+      case 5:
+        this.animationStateWebDesign = this.animationStateWebDesign === 'out' ? 'in' : 'out';
+        this.webDesignContent = !this.webDesignContent;
+        break;
+        default:
+    }
     $event.preventDefault();
-    target.scrollIntoView();
-}
+        // target.scrollIntoView();
+  }
 
-onToggleContentAmp($event, el: Element): void {
-  this.animationStateAmp = this.animationStateAmp === 'out' ? 'in' : 'out';
-  this.ampContent = !this.ampContent;
-  $event.preventDefault();
-  el.scrollIntoView();
-}
+  onArrowSwitch(id: number): boolean {
+    switch (id) {
+      case 0:
+        return this.weatherAppContent;
+      case 1:
+        return this.ampContent;
+      case 2:
+        return this.toDoContentContent;
+      case 3:
+        return this.fetchServerContent;
+      case 4:
+        return this.playballContent;
+      case 5:
+        return this.webDesignContent;
+    }
+  }
 
-onToggleContentToDo($event, el: Element): void {
-  this.animationStateToDo = this.animationStateToDo === 'out' ? 'in' : 'out';
-  this.toDoContentContent = !this.toDoContentContent;
-  $event.preventDefault();
-  el.scrollIntoView();
-}
+  onAnimationState(id: number): string {
+    switch (id) {
+      case 0:
+        return this.animationStateWeatherApp;
+      case 1:
+        return this.animationStateAmp;
+      case 2:
+        return this.animationStateToDo;
+      case 3:
+        return this.animationStateFetchServer;
+      case 4:
+        return this.animationStatePlayball;
+      case 5:
+        return this.animationStateWebDesign;
+    }
 
-onToggleContentFetchServer($event, el: Element): void {
-  this.animationStateFetchServer = this.animationStateFetchServer === 'out' ? 'in' : 'out';
-  this.fetchServerContent = !this.fetchServerContent;
-  $event.preventDefault();
-  el.scrollIntoView();
-}
-
-onToggleContentPlayball($event, el: Element): void {
-  this.animationStatePlayball = this.animationStatePlayball === 'out' ? 'in' : 'out';
-  this.playballContent = !this.playballContent;
-  $event.preventDefault();
-  el.scrollIntoView();
-}
-
-onToggleContentWebDesign($event, el: Element): void {
-  this.animationStateWebDesign = this.animationStateWebDesign === 'out' ? 'in' : 'out';
-  this.webDesignContent = !this.webDesignContent;
-  $event.preventDefault();
-  el.scrollIntoView();
-}
+  }
 
 onShowMore(event): void {
-
   this.animationStateShowMore = this.animationStateShowMore === 'out' ? 'in' : 'out';
   if (this.animationStateShowMore === 'out') {
-      this.showMoreName = 'See More';
+          this.mainProjects = this.subProjects;
+          this.showMoreName = 'See More';
      } else {
-    this.showMoreName = 'See Less';
-    event.preventDefault();
-  }
+          this.mainProjects = this.projects;
+          event.preventDefault();
+          this.showMoreName = 'See Less';
+      }
 }
-
 }
