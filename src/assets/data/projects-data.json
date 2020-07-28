@@ -4,6 +4,22 @@
     [
       {
         "id": 0,
+        "name": "Latawiec - Animation and Education Center",
+        "img": "../../assets/images/latawiec.jpg",
+        "imgDraft": "../../assets/images/latawiec-min.jpg",
+        "sourceURL": "https://latawiec.net/",
+        "sourceRepo": "https://github.com/Anuradis/ca-latawiec",
+        "animationState": "animationStateWeatherApp",
+        "description":
+        [
+          {
+            "main": "Latawiec.net -  website created for Animation and Education Center.",
+            "techstack": "Techstack: Angular, ReactiveForms, RxJS, TypeScript, ES6, HTML5, Css3, Sass, Bootstrap4, RWD, Firebase Cloud Services, Firebase Hosting/CLI, Git, Npm."
+          }
+        ]
+      },
+      {
+        "id": 1,
         "name": "Jar-Moneybox-App",
         "img": "../../assets/images/moneybox.png",
         "imgDraft": "../../assets/images/moneybox-min.png",
@@ -20,7 +36,7 @@
         ]
       },
       {
-        "id": 1,
+        "id": 2,
         "name": "Weather-app",
         "img": "../../assets/images/weather_app.png",
         "imgDraft": "../../assets/images/weather_app-min.png",
@@ -36,7 +52,7 @@
         ]
       },
       {
-        "id": 2,
+        "id": 3,
         "name": "Todo-list",
         "img": "../../assets/images/todo_list.png",
         "imgDraft": "../../assets/images/todo_list-min.png",
@@ -51,7 +67,7 @@
         ]
       },
       {
-        "id": 3,
+        "id": 4,
         "name": "Fetch-news-server",
         "img": "../../assets/images/fetch_news-server.png",
         "imgDraft": "../../assets/images/fetch_news-server-min.png",
@@ -66,7 +82,7 @@
         ]
       },
       {
-        "id": 4,
+        "id": 5,
         "name": "Playball-game",
         "img": "../../assets/images/playball_game.png",
         "imgDraft": "../../assets/images/playball_game-min.png",
@@ -82,7 +98,7 @@
         ]
       },
       {
-        "id": 5,
+        "id": 6,
         "name": "Example-web-design",
         "img": "../../assets/images/web-design.png",
         "imgDraft": "../../assets/images/web-design-min.png",
