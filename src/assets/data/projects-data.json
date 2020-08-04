@@ -14,7 +14,7 @@
         [
           {
             "main": "Latawiec.net -  website created for Animation and Education Center.",
-            "techstack": "Techstack: Angular, ReactiveForms, RxJS, TypeScript, ES6, HTML5, Css3, Sass, Bootstrap4, RWD, Firebase Cloud Services, Firebase Hosting/CLI, Git, Npm."
+            "techstack": "Techstack: Angular 8, ReactiveForms, RxJS, TypeScript, ES6, HTML5, Css3, Sass, Bootstrap4, RWD, Firebase Cloud Services, Firebase Hosting/CLI, Git, Npm."
           }
         ]
       },
