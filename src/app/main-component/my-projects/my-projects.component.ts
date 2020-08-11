@@ -15,20 +15,23 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   @ViewChild('seeMore', {static: false}) someFiled: ElementRef;
   @Output() sendSeeMoreElement = new EventEmitter<ElementRef>();
 
+  latawiecAppContent = false;
+  geomessageContent = false;
+  jarmoneyboxContent = false;
   weatherAppContent = false;
-  ampContent = false;
-  toDoContentContent = false;
-  fetchServerContent = false;
+  juicerContent = false;
   playballContent = false;
-  webDesignContent = false;
+  liveChatAppContent = false;
 
-  animationStateWeatherApp = 'out';
-  animationStateFetchServer = 'out';
-  animationStateToDo = 'out';
-  animationStateShowMore = 'out';
-  animationStateAmp = 'out';
+  animationStateLatawiec = 'out';
+  animationStateGeoMessage = 'out';
+  animationStatejarmoneybox = 'out';
+  animationStateWeaterApp = 'out';
+  animationStateJuicer = 'out';
   animationStatePlayball = 'out';
-  animationStateWebDesign = 'out';
+  animationStateLiveChatApp = 'out';
+
+  animationStateShowMore = 'out';
 
   showMore = true;
   showMoreName = 'See More';
@@ -57,28 +60,32 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   onToggleContent($event: Event, target: boolean, id: number) {
     switch (id) {
       case 0:
-        this.animationStateWeatherApp = this.animationStateWeatherApp === 'out' ? 'in' : 'out';
-        this.weatherAppContent = !this.weatherAppContent;
+        this.animationStateLatawiec = this.animationStateLatawiec === 'out' ? 'in' : 'out';
+        this.latawiecAppContent = !this.latawiecAppContent;
         break;
       case 1:
-        this.animationStateAmp = this.animationStateAmp === 'out' ? 'in' : 'out';
-        this.ampContent = !this.ampContent;
+        this.animationStateWeaterApp = this.animationStateWeaterApp === 'out' ? 'in' : 'out';
+        this.geomessageContent = !this.geomessageContent;
         break;
       case 2:
-        this.animationStateToDo = this.animationStateToDo === 'out' ? 'in' : 'out';
-        this.toDoContentContent = !this.toDoContentContent;
+        this.animationStatejarmoneybox = this.animationStatejarmoneybox === 'out' ? 'in' : 'out';
+        this.jarmoneyboxContent = !this.jarmoneyboxContent;
         break;
       case 3:
-        this.animationStateFetchServer = this.animationStateFetchServer === 'out' ? 'in' : 'out';
-        this.fetchServerContent = !this.fetchServerContent;
+        this.animationStateGeoMessage = this.animationStateGeoMessage === 'out' ? 'in' : 'out';
+        this.weatherAppContent = !this.weatherAppContent;
         break;
       case 4:
         this.animationStatePlayball = this.animationStatePlayball === 'out' ? 'in' : 'out';
         this.playballContent = !this.playballContent;
         break;
       case 5:
-        this.animationStateWebDesign = this.animationStateWebDesign === 'out' ? 'in' : 'out';
-        this.webDesignContent = !this.webDesignContent;
+        this.animationStateLiveChatApp = this.animationStateLiveChatApp === 'out' ? 'in' : 'out';
+        this.liveChatAppContent = !this.liveChatAppContent;
+        break;
+      case 6:
+        this.animationStateJuicer = this.animationStateJuicer === 'out' ? 'in' : 'out';
+        this.juicerContent = !this.juicerContent;
         break;
         default:
     }
@@ -88,34 +95,38 @@ export class MyProjectsComponent implements OnInit, AfterViewInit {
   onArrowSwitch(id: number): boolean {
     switch (id) {
       case 0:
-        return this.weatherAppContent;
+        return this.latawiecAppContent;
       case 1:
-        return this.ampContent;
+        return this.geomessageContent;
       case 2:
-        return this.toDoContentContent;
+        return this.jarmoneyboxContent;
       case 3:
-        return this.fetchServerContent;
+        return this.weatherAppContent;
       case 4:
         return this.playballContent;
       case 5:
-        return this.webDesignContent;
+        return this.liveChatAppContent;
+      case 6:
+        return this.juicerContent;
     }
   }
 
   onAnimationState(id: number): string {
     switch (id) {
       case 0:
-        return this.animationStateWeatherApp;
+        return this.animationStateLatawiec;
       case 1:
-        return this.animationStateAmp;
+        return this.animationStateWeaterApp;
       case 2:
-        return this.animationStateToDo;
+        return this.animationStatejarmoneybox;
       case 3:
-        return this.animationStateFetchServer;
+        return this.animationStateGeoMessage;
       case 4:
         return this.animationStatePlayball;
       case 5:
-        return this.animationStateWebDesign;
+        return this.animationStateLiveChatApp;
+      case 6:
+        return this.animationStateJuicer;
     }
 
   }

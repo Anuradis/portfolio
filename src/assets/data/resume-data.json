@@ -8,17 +8,18 @@
     "title": "Technical skills",
     "skills": [
     "JavaScript - essential knowledge to go any further with programming",
+    "Vue - proficient (based on Pluralsight)",
     "Angular - proficient (based on Pluralsight)",
     "TypeScript - funtamental for work with Angular",
-    "TestCafe - first test automation framework I got to work with. In my current employement I was responsible for creation of automated tests, API test automation",
-    "JAVA - I got to learn Java to create automation tests in Selenium Webdriver framework. It helped me a lot to become a better developer",
-    "Selenium WebDriver - creation of more complex automation tests",
-    "React - the basics",
+    "Firebase Cloud Services - DB, Auth, Hosting",
     "HTML5 - attention to semantic code and good practice",
     "CSS3 - attention to good design and clean code",
     "SASS - fundamental for writing clean nested selectors",
     "Bootstrap - pracitce use and quick reseach",
     "Responsive Web Design",
+    "TestCafe - first test automation framework I got to work with. In my current employement I was responsible for creation of automated tests, API test automation",
+    "JAVA - I got to learn Java to create automation tests in Selenium Webdriver framework. It helped me a lot to become a better developer",
+    "Selenium WebDriver - creation of more complex automation tests",
     "GIT",
     "JIRA"
   ]
